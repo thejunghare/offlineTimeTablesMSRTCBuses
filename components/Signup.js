@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
   View,
   TextInput,
   TouchableOpacity,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SignupScreen() {
   const navigation = useNavigation();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSignup = () => {
     // Handle signup logic
@@ -24,7 +24,7 @@ export default function SignupScreen() {
 
   const handleLogin = () => {
     // Navigate to Login screen
-    navigation.navigate('Login');
+    navigation.navigate("Login");
   };
 
   return (
@@ -68,36 +68,36 @@ export default function SignupScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    width: '100%',
+    alignItems: "center",
+    width: "100%",
     padding: 16,
   },
   inputView: {
-    width: '80%',
-    backgroundColor: '#fff',
+    width: "80%",
+    backgroundColor: "#fff",
     borderRadius: 25,
     height: 50,
     marginBottom: 20,
-    justifyContent: 'center',
+    justifyContent: "center",
     padding: 20,
   },
   inputText: {
     height: 50,
-    color: 'black',
+    color: "black",
   },
   signupBtn: {
-    width: '50%',
-    backgroundColor: '#FF0000',
+    width: "50%",
+    backgroundColor: "#FF0000",
     borderRadius: 25,
     height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginBottom: 10,
   },
   signupText: {
-    color: 'white',
+    color: "white",
   },
   loginText: {
-    color: '#003f5c',
+    color: "#003f5c",
   },
 });

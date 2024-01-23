@@ -1,16 +1,17 @@
-import * as React from 'react';
-import { Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as React from "react";
+import { Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 // importing screens
-import SearchBus from './components/SearchBus';
-import TicketBookingScreen from './components/TicketBookingScreen';
-import LoginStack from './components/LoginStack';
+import SearchBus from "./components/SearchBus";
+import TicketBookingScreen from "./components/TicketBookingScreen";
+import LoginStack from "./components/LoginStack";
+import SettingScreen from "./components/Settings";
 
 function Feed() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <SearchBus />
     </View>
   );
@@ -26,7 +27,7 @@ function Profile() {
 
 function Notifications() {
   return (
-    <View style={{ flex: 1}}>
+    <View style={{ flex: 1 }}>
       <TicketBookingScreen />
     </View>
   );
@@ -35,7 +36,7 @@ function Notifications() {
 function Settings() {
   return (
     <View style={{ flex: 1 }}>
-      <Text>Settings screen</Text>
+      <Settings />
     </View>
   );
 }
@@ -47,13 +48,14 @@ function MyTabs() {
     <Tab.Navigator
       initialRouteName="Feed"
       screenOptions={{
-        tabBarActiveTintColor: '#FF0000',
-      }}>
+        tabBarActiveTintColor: "#FF0000",
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={Feed}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
@@ -63,7 +65,7 @@ function MyTabs() {
         name="Tickets"
         component={Notifications}
         options={{
-          tabBarLabel: 'Tickets',
+          tabBarLabel: "Tickets",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
@@ -74,7 +76,7 @@ function MyTabs() {
         component={Profile}
         options={{
           headerShown: false,
-          tabBarLabel: 'Profile',
+          tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
@@ -82,9 +84,9 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Settings"
-        component={Settings}
+        component={SettingScreen}
         options={{
-          tabBarLabel: 'Settings',
+          tabBarLabel: "Settings",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="settings" color={color} size={size} />
           ),
