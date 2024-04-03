@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"net/http"
-	"os"
 )
 
 type Stop struct {
@@ -21,15 +20,15 @@ type Bus struct {
 }
 
 func main() {
-	// Read data from JSON file
-	file, err := os.Open("data.json")
+	// Fetch data from GitHub Pages
+	resp, err := http.Get("https://thejunghare.github.io/offlineTimeTablesMSRTCBuses/data.json")
 	if err != nil {
 		panic(err)
 	}
-	defer file.Close()
+	defer resp.Body.Close()
 
 	var data []Bus
-	if err := json.NewDecoder(file).Decode(&data); err != nil {
+	if err := json.NewDecoder(resp.Body).Decode(&data); err != nil {
 		panic(err)
 	}
 
