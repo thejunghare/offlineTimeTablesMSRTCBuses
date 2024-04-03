@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -19,6 +20,10 @@ type Bus struct {
 	Stops       []Stop `json:"stops"`
 }
 
+func fooHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello, world!")
+}
+
 func main() {
 	// Fetch data from GitHub Pages
 	resp, err := http.Get("https://thejunghare.github.io/offlineTimeTablesMSRTCBuses/data.json")
@@ -31,6 +36,8 @@ func main() {
 	if err := json.NewDecoder(resp.Body).Decode(&data); err != nil {
 		panic(err)
 	}
+
+	http.HandleFunc("/foo", fooHandler)
 
 	// Define a handler function for the "/buses" endpoint
 	http.HandleFunc("/buses", func(w http.ResponseWriter, r *http.Request) {
