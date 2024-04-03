@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+	"os"
 )
 
 type Stop struct {
@@ -19,58 +20,19 @@ type Bus struct {
 	Stops       []Stop `json:"stops"`
 }
 
-var data = []Bus{
-	{
-		ID:          1,
-		Name:        "Ordinary Bus",
-		Source:      "Satara",
-		Destination: "Sajjangad",
-		Stops: []Stop{
-			{Name: "Satara", Fare: "₹0", Time: "10:00 AM"},
-			{Name: "Rajwada", Fare: "₹5", Time: "10:10 AM"},
-			{Name: "Samarth Mandir", Fare: "₹10", Time: "10:20 AM"},
-			{Name: "Sajjangad", Fare: "₹25", Time: "11:10 AM"},
-		},
-	},
-	{
-		ID:          2,
-		Name:        "Ordinary Bus",
-		Source:      "Satara",
-		Destination: "Sajjangad",
-		Stops: []Stop{
-			{Name: "Satara", Fare: "₹0", Time: "10:20 AM"},
-			{Name: "Rajwada", Fare: "₹5", Time: "10:30 AM"},
-			{Name: "Samarth Mandir", Fare: "₹10", Time: "10:40 AM"},
-			{Name: "Sajjangad", Fare: "₹25", Time: "11:30 AM"},
-		},
-	},
-	{
-		ID:          5,
-		Name:        "Ordinary Bus",
-		Source:      "Satara",
-		Destination: "Thoseghar",
-		Stops: []Stop{
-			{Name: "Satara", Fare: "₹0", Time: "10:30 AM"},
-			{Name: "Rajwada", Fare: "₹5", Time: "10:40 AM"},
-			{Name: "Samarth Mandir", Fare: "₹10", Time: "11:00 AM"},
-			{Name: "Thoseghar", Fare: "₹25", Time: "12:00 AM"},
-		},
-	},
-	{
-		ID:          1,
-		Name:        "Shivshahi Bus",
-		Source:      "Satara",
-		Destination: "Mumbai Central",
-		Stops: []Stop{
-			{Name: "Satara", Fare: "₹0", Time: "10:00 AM"},
-			{Name: "Panvel", Fare: "₹450", Time: "10:10 AM"},
-			{Name: "Vashi Highway", Fare: "₹500", Time: "10:20 AM"},
-			{Name: "Mumbai Central", Fare: "₹700", Time: "11:10 AM"},
-		},
-	},
-}
-
 func main() {
+	// Read data from JSON file
+	file, err := os.Open("data.json")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	var data []Bus
+	if err := json.NewDecoder(file).Decode(&data); err != nil {
+		panic(err)
+	}
+
 	// Define a handler function for the "/buses" endpoint
 	http.HandleFunc("/buses", func(w http.ResponseWriter, r *http.Request) {
 		// Extract source and destination from the URL query parameters

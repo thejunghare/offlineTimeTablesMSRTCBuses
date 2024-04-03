@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Ordinary Bus",
+    "source": "Satara",
+    "destination": "Sajjangad",
+    "stops": [
+      { "name": "Satara", "fare": "₹0", "time": "10:00 AM" },
+      { "name": "Rajwada", "fare": "₹5", "time": "10:10 AM" },
+      { "name": "Samarth Mandir", "fare": "₹10", "time": "10:20 AM" },
+      { "name": "Sajjangad", "fare": "₹25", "time": "11:10 AM" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Ordinary Bus",
+    "source": "Satara",
+    "destination": "Sajjangad",
+    "stops": [
+      { "name": "Satara", "fare": "₹0", "time": "10:20 AM" },
+      { "name": "Rajwada", "fare": "₹5", "time": "10:30 AM" },
+      { "name": "Samarth Mandir", "fare": "₹10", "time": "10:40 AM" },
+      { "name": "Sajjangad", "fare": "₹25", "time": "11:30 AM" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Ordinary Bus",
+    "source": "Satara",
+    "destination": "Thoseghar",
+    "stops": [
+      { "name": "Satara", "fare": "₹0", "time": "10:30 AM" },
+      { "name": "Rajwada", "fare": "₹5", "time": "10:40 AM" },
+      { "name": "Samarth Mandir", "fare": "₹10", "time": "11:00 AM" },
+      { "name": "Thoseghar", "fare": "₹25", "time": "12:00 AM" }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Shivshahi Bus",
+    "source": "Satara",
+    "destination": "Mumbai Central",
+    "stops": [
+      { "name": "Satara", "fare": "₹0", "time": "10:00 AM" },
+      { "name": "Panvel", "fare": "₹450", "time": "10:10 AM" },
+      { "name": "Vashi Highway", "fare": "₹500", "time": "10:20 AM" },
+      { "name": "Mumbai Central", "fare": "₹700", "time": "11:10 AM" }
+    ]
+  }
+]
