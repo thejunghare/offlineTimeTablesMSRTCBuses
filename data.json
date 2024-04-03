@@ -24,7 +24,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 3,
     "name": "Ordinary Bus",
     "source": "Satara",
     "destination": "Thoseghar",
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": 4,
     "name": "Shivshahi Bus",
     "source": "Satara",
     "destination": "Mumbai Central",
