@@ -7,19 +7,23 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { auth } from '../firebase'
 
 export default function SignupScreen() {
   const navigation = useNavigation();
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
 
   const handleSignup = () => {
     // Handle signup logic
-    console.log(
-      `Username: ${username}, Password: ${password}, Confirm Password: ${confirmPassword}`
-    );
+    auth
+      .createUserWithEmailAndPassword(userEmail, userPassword)
+      .then(userCredentials => {
+        const user = userCredentials.user
+        console.log(user.email);
+      })
+      .catch(error => alert(error.message))
   };
 
   const handleLogin = () => {
@@ -32,9 +36,9 @@ export default function SignupScreen() {
       <View style={styles.inputView}>
         <TextInput
           style={styles.inputText}
-          placeholder="Username"
+          placeholder="Email"
           placeholderTextColor="#003f5c"
-          onChangeText={(text) => setUsername(text)}
+          onChangeText={(text) => setUserEmail(text)}
         />
       </View>
       <View style={styles.inputView}>
@@ -43,16 +47,7 @@ export default function SignupScreen() {
           style={styles.inputText}
           placeholder="Password"
           placeholderTextColor="#003f5c"
-          onChangeText={(text) => setPassword(text)}
-        />
-      </View>
-      <View style={styles.inputView}>
-        <TextInput
-          secureTextEntry
-          style={styles.inputText}
-          placeholder="Confirm Password"
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => setConfirmPassword(text)}
+          onChangeText={(text) => setUserPassword(text)}
         />
       </View>
       <TouchableOpacity style={styles.signupBtn} onPress={handleSignup}>
