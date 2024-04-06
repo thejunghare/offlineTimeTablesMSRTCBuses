@@ -18,7 +18,7 @@ export default function ProfileScreen() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
-        navigation.navigate("Profile")
+        navigation.replace("Profile")
       }
     })
 

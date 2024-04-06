@@ -79,7 +79,7 @@ function MyTabs() {
         name="Profile"
         component={Profile}
         options={{
-          // headerShown: false,
+          headerShown: false,
           tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="user" size={24} color="black" />
