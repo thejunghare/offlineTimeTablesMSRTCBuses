@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,16 +7,32 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { auth } from '../firebase'
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        navigation.navigate("Profile")
+      }
+    })
+
+    return unsubscribe
+  }, [])
 
   const handleLogin = () => {
-    // Handle login logic
-    console.log(`Username: ${username}, Password: ${password}`);
+    auth
+      .signInWithEmailAndPassword(userEmail, userPassword)
+      .then(userCredentials => {
+        const user = userCredentials.user
+        console.log(`logged in with: `, user.email);
+      })
+      .catch(error => alert(error.message))
   };
 
   const handleSignup = () => {
@@ -29,9 +45,9 @@ export default function ProfileScreen() {
       <View style={styles.inputView}>
         <TextInput
           style={styles.inputText}
-          placeholder="Username"
+          placeholder="Email"
           placeholderTextColor="#003f5c"
-          onChangeText={(text) => setUsername(text)}
+          onChangeText={(text) => setUserEmail(text)}
         />
       </View>
       <View style={styles.inputView}>
@@ -40,7 +56,7 @@ export default function ProfileScreen() {
           style={styles.inputText}
           placeholder="Password"
           placeholderTextColor="#003f5c"
-          onChangeText={(text) => setPassword(text)}
+          onChangeText={(text) => setUserPassword(text)}
         />
       </View>
       <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
