@@ -3,7 +3,7 @@ import {
   View,
   Text,
   TextInput,
-  Button,
+
   StyleSheet,
   TouchableOpacity,
   ScrollView,
@@ -12,6 +12,8 @@ import {
 import { Card, Icon } from "react-native-elements";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Picker } from "@react-native-picker/picker";
+import { Button, ActivityIndicator } from 'react-native-paper';
+
 
 const SearchBus = () => {
   const [loading, setLoading] = useState(false);
@@ -88,6 +90,7 @@ const SearchBus = () => {
             setShowRoutes(false);
             setNoBusesFound(false);
             setCurrentIndex(0);
+            setLoading(false);
           }
         } else {
           // Display direct buses and show the fare of the destination
@@ -267,9 +270,21 @@ const SearchBus = () => {
         />*/}
         {/* <Button title="Search" style={styles.searchBtn} onPress={handleSearch} />*/}
       </View>
-      <TouchableOpacity style={styles.searchBtn} onPress={handleSearch}>
+      {/* <TouchableOpacity style={styles.searchBtn} onPress={handleSearch}>
         <Text style={styles.searchText}>Search</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      <Button
+        // icon="search-web"
+        mode="elevated"
+        uppercase="false"
+        buttonColor="#FF0000"
+        color="white"
+        onPress={handleSearch}
+        style={styles.searchBtn}
+        dark="true"
+      >
+        {loading ? <ActivityIndicator animating={true} color={'white'} /> : 'Search Bus'}
+      </Button>
       {showRoutes && (
         <ScrollView style={styles.routesContainer}>
           {routes.map((route) => (
@@ -304,6 +319,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: "auto",
     marginRight: "auto",
+    fontWeight: 500,
+
   },
   searchText: {
     color: "white",
