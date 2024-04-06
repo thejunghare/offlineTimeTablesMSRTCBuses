@@ -1,7 +1,9 @@
-import React from 'react'
-import { Text, View, TouchableOpacity, StyleSheet, } from 'react-native'
-import { auth } from '../firebase'
+import React, { useEffect, useState } from 'react'
+import { Text, View, TouchableOpacity, StyleSheet, FlatList, } from 'react-native'
+import { firebase, auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
+
+
 
 export default function ProfileScreen() {
     const navigation = useNavigation();
@@ -15,12 +17,49 @@ export default function ProfileScreen() {
             .catch(error => alert(error.message))
     }
 
+    const [tickets, setTickets] = useState([]);
+
+    useEffect(() => {
+        const fetchTickets = async () => {
+            const bookedTicketsRef = firebase.firestore().collection('bookedTickets');
+            // Use try-catch for error handling
+            try {
+                const querySnapshot = await bookedTicketsRef.get();
+                const ticketData = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setTickets(ticketData);
+            } catch (error) {
+                console.error('Error fetching tickets: ', error);
+            }
+        };
+
+        // Call the function to fetch tickets
+        fetchTickets();
+
+        // Cleanup function
+        return () => {
+            // Unsubscribe from Firestore listener if any
+        };
+    }, []);
+
     return (
         <View style={styles.container}>
             <Text>Email: {auth.currentUser?.email}</Text>
             <TouchableOpacity style={styles.logoutBtn} onPress={handleLogout}>
                 <Text style={styles.loginText}>Logout</Text>
             </TouchableOpacity>
+
+
+
+            <View>
+                {tickets.map(ticket => (
+                    <View key={ticket.id}>
+                        <Text>{ticket.BusName}</Text>
+                    </View>
+                ))}
+            </View>
         </View>
     )
 }

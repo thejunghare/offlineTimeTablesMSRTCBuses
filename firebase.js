@@ -3,6 +3,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+import  'firebase/compat/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -23,4 +24,6 @@ if (!firebase.apps.length) {
 }
 
 const auth = firebase.auth();
-export { auth };
+
+
+export { auth,firebase };
