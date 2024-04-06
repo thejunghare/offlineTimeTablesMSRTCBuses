@@ -2,7 +2,8 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 // importing screens
 import SearchBus from "./components/SearchBus";
 import TicketBookingScreen from "./components/TicketBookingScreen";
@@ -57,7 +58,8 @@ function MyTabs() {
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            // <MaterialCommunityIcons name="home" color={color} size={size} />
+            <AntDesign name="home" size={24} color="black" />
           ),
         }}
       />
@@ -67,7 +69,7 @@ function MyTabs() {
         options={{
           tabBarLabel: "Tickets",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
+            <Ionicons name="ticket-outline" size={24} color="black" />
           ),
         }}
       />
@@ -78,7 +80,8 @@ function MyTabs() {
           headerShown: false,
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            // <MaterialCommunityIcons name="account" color={color} size={size} />
+            <AntDesign name="user" size={24} color="black" />
           ),
         }}
       />
@@ -88,7 +91,8 @@ function MyTabs() {
         options={{
           tabBarLabel: "Settings",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="settings" color={color} size={size} />
+            // <MaterialCommunityIcons name="settings" color={color} size={size} />
+            <AntDesign name="setting" size={24} color="black" />
           ),
         }}
       />
