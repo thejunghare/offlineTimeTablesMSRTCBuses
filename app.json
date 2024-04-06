@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.thejunghare.snack46284c65b45a4597916a2eea3753518b"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "34a3a7f9-4dbe-4eb0-b16e-47d9c39adb83"
+      }
     }
   }
 }
