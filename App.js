@@ -56,7 +56,8 @@ function MyTabs() {
         name="Home"
         component={Feed}
         options={{
-          tabBarLabel: "Home",
+          // headerShown: false,
+          tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
             // <MaterialCommunityIcons name="home" color={color} size={size} />
             <AntDesign name="home" size={24} color="black" />
@@ -67,7 +68,8 @@ function MyTabs() {
         name="Tickets"
         component={Notifications}
         options={{
-          tabBarLabel: "Tickets",
+          // headerShown: false,
+          tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ticket-outline" size={24} color="black" />
           ),
@@ -77,10 +79,9 @@ function MyTabs() {
         name="Profile"
         component={Profile}
         options={{
-          headerShown: false,
-          tabBarLabel: "Profile",
+          // headerShown: false,
+          tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
-            // <MaterialCommunityIcons name="account" color={color} size={size} />
             <AntDesign name="user" size={24} color="black" />
           ),
         }}
@@ -89,7 +90,8 @@ function MyTabs() {
         name="Settings"
         component={SettingScreen}
         options={{
-          tabBarLabel: "Settings",
+          // headerShown: false,
+          tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
             // <MaterialCommunityIcons name="settings" color={color} size={size} />
             <AntDesign name="setting" size={24} color="black" />
