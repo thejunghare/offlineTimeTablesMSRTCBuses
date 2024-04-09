@@ -1,12 +1,15 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 import React, { useState } from "react";
 import { View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  getFocusedRouteNameFromRoute,
+} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // icons imports
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 // screen imports
 import SearchBus from "./components/SearchBus";
@@ -20,7 +23,7 @@ const Feed = () => {
       <SearchBus />
     </View>
   );
-}
+};
 
 const Profile = () => {
   return (
@@ -28,7 +31,7 @@ const Profile = () => {
       <LoginStack />
     </View>
   );
-}
+};
 
 const Ticket = () => {
   return (
@@ -36,7 +39,7 @@ const Ticket = () => {
       <TicketStack />
     </View>
   );
-}
+};
 
 const Settings = () => {
   return (
@@ -44,25 +47,37 @@ const Settings = () => {
       <Settings />
     </View>
   );
-}
+};
 
 const Tab = createBottomTabNavigator();
 
-const MyTabs = () => {
+const MyTabs = ({ route }) => {
+  const focusedRoute = route ? getFocusedRouteNameFromRoute(route) : 'Feed';
+
   return (
     <Tab.Navigator
       initialRouteName="Feed"
-      screenOptions={{
-        tabBarActiveTintColor: "#FF0000",
-      }}
+      screenOptions={({ route }) => ({
+        tabBarActiveTintColor: focusedRoute === 'Feed' ? '#C51E3A' : undefined,
+        tabBarInactiveTintColor: focusedRoute === 'Feed' ? '#000000' : undefined,
+        // tabBarShowLabel: focusedRoute === 'Feed' ? true : false,
+      })}
     >
       <Tab.Screen
         name="Home"
         component={Feed}
         options={{
+          headerStyle: {
+            backgroundColor: 'white',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+          },
           tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="home" size={24} color="black" />
+            <AntDesign name="home" size={24} color={color} />
           ),
         }}
       />
@@ -71,9 +86,17 @@ const MyTabs = () => {
         component={Ticket}
         options={{
           headerShown: false,
+          headerStyle: {
+            backgroundColor: 'white',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+          },
           tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ticket-outline" size={24} color="black" />
+            <Ionicons name="ticket-outline" size={24} color={color} />
           ),
         }}
       />
@@ -82,9 +105,17 @@ const MyTabs = () => {
         component={Profile}
         options={{
           headerShown: false,
+          headerStyle: {
+            backgroundColor: 'white',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+          },
           tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="user" size={24} color="black" />
+            <AntDesign name="user" size={24} color={color} />
           ),
         }}
       />
@@ -92,15 +123,23 @@ const MyTabs = () => {
         name="Settings"
         component={SettingScreen}
         options={{
+          headerStyle: {
+            backgroundColor: 'white',
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+          },
           tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="setting" size={24} color="black" />
+            <AntDesign name="setting" size={24} color={color} />
           ),
         }}
       />
     </Tab.Navigator>
   );
-}
+};
 
 const App = () => {
   return (
@@ -108,6 +147,6 @@ const App = () => {
       <MyTabs />
     </NavigationContainer>
   );
-}
+};
 
-export default App
+export default App;

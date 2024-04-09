@@ -2,7 +2,7 @@
   "expo": {
     "name": "EZGO",
     "slug": "snack-46284c65-b45a-4597-916a-2eea3753518b",
-    "version": "0.0.3.8",
+    "version": "0.0.4.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -34,6 +34,14 @@
       "eas": {
         "projectId": "34a3a7f9-4dbe-4eb0-b16e-47d9c39adb83"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/Inter-Regular.ttf"]
+        }
+      ]
+    ]
   }
 }

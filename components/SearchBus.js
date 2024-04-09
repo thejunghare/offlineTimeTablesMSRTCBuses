@@ -265,7 +265,7 @@ const SearchBus = () => {
   const formattedDate = moment(date).format("ddd D-MMM");
 
   return (
-    <View className="flex-1 p-4 min-w-full bg-neutral-50">
+    <View className="flex-1 p-4 min-w-full bg-white">
       <Text className="text-xl subpixel-antialiased	not-italic font-extrabold	tracking-tight leading-relaxed mb-5">
         Search Bus
       </Text>
