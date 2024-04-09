@@ -1,19 +1,29 @@
-import React, { useState, useEffect } from "react";
+import { StatusBar } from "expo-status-bar";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useMemo,
+} from "react";
 import {
   View,
   Text,
-  TextInput,
-
+  Alert,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  Modal,
 } from "react-native";
 import { Card, Icon } from "react-native-elements";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Button, ActivityIndicator } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
-import { Button, ActivityIndicator } from 'react-native-paper';
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Calendar, LocaleConfig } from "react-native-calendars";
+import {
+  BottomSheetModal,
+  BottomSheetView,
+  BottomSheetModalProvider,
+} from '@gorhom/bottom-sheet';
 
 const SearchBus = () => {
   const [loading, setLoading] = useState(false);
@@ -146,11 +156,11 @@ const SearchBus = () => {
 
   const renderBuses = () => {
     if (loading) {
-      return <Text>Loading...</Text>;
+      return <Text style={styles.errorText}>Loading..!</Text>;
     }
 
     if (noBusesFound) {
-      return <Text>No buses available.</Text>;
+      return <Text style={styles.errorText}>No buses available..!</Text>;
     }
     if (buses.length > 0) {
       return (
@@ -229,50 +239,115 @@ const SearchBus = () => {
     }
   };
 
+  /* const [selected, setSelected] = useState(
+    new Date().toISOString().split("T")[0]
+  );
+
+  const [showPicker, setShowPicker] = useState(false);
+  */
+
+  // ref
+  const bottomSheetModalRef = useRef < BottomSheetModal > (null);
+
+  // variables
+  const snapPoints = useMemo(() => ['25%', '50%'], []);
+
+  // callbacks
+  const handleOpenCalendar = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
+
+
+
   return (
-    <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <View style={styles.pickerContainer}>
-          <Picker
-            style={{ flex: 1 }}
-            selectedValue={source}
-            onValueChange={(itemValue, itemIndex) => setSource(itemValue)}
-          >
-            <Picker.Item label="Source" value="" />
-            {data.map((item) => (
-              <Picker.Item key={item.id} label={item.name} value={item.name} />
-            ))}
-          </Picker>
+    <View className="flex-1 p-4 min-w-full bg-white">
+      <View className="border border-gray-400 rounded-2xl mb-5 grid grid-cols-1 divide-y divide-gray-400 divide-solid">
+        {/* first picker */}
+        <View className="w-full px-2 flex flex-row items-center justify-between">
+          <View className="w-1/12">
+            <MaterialCommunityIcons name="bus-stop" size={24} color="black" />
+          </View>
 
-          <Picker
-            style={{ flex: 1 }}
-            selectedValue={destination}
-            onValueChange={(itemValue, itemIndex) => setDestination(itemValue)}
-          >
-            <Picker.Item label="Destination" value="" />
-            {data.map((item) => (
-              <Picker.Item key={item.id} label={item.name} value={item.name} />
-            ))}
-          </Picker>
+          <View className="w-11/12">
+            <Picker
+              selectedValue={source}
+              onValueChange={(itemValue, itemIndex) => {
+                setSource(itemValue);
+              }}
+            >
+              <Picker.Item label="From" value="" />
+              {data.map((item) => (
+                <Picker.Item
+                  key={item.id}
+                  label={item.name}
+                  value={item.name}
+                />
+              ))}
+            </Picker>
+          </View>
         </View>
-        {/* <TextInput
-          style={styles.input}
-          placeholder="Source"
-          value={source}
-          onChangeText={setSource}
-        />
 
-        <TextInput
-          style={styles.input}
-          placeholder="Destination"
-          value={destination}
-          onChangeText={setDestination}
-        />*/}
-        {/* <Button title="Search" style={styles.searchBtn} onPress={handleSearch} />*/}
+        {/* second picker */}
+        <View className="w-full px-2 flex flex-row items-center justify-between">
+          <View className=" w-1/12">
+            <MaterialCommunityIcons name="bus-stop" size={24} color="black" />
+          </View>
+
+          <View className="w-11/12">
+            <Picker
+              className="text-slate-400"
+              selectedValue={destination}
+              onValueChange={(itemValue, itemIndex) => {
+                setDestination(itemValue);
+              }}
+            >
+              <Picker.Item label="To" value="" />
+              {data.map((item) => (
+                <Picker.Item
+                  key={item.id}
+                  label={item.name}
+                  value={item.name}
+                />
+              ))}
+            </Picker>
+          </View>
+        </View>
+
+        <View className="w-full px-2 flex flex-row items-center justify-between">
+          <View className=" w-1/12">
+            <MaterialCommunityIcons
+              name="calendar-clock"
+              size={24}
+              color="black"
+            />
+          </View>
+
+          <View className="w-11/12">
+            <Text className="p-5">Tue 9-Apr</Text>
+            {/* <BottomSheetModalProvider>
+              <View >
+                <Button
+                  onPress={handleOpenCalendar}
+                  title="Present Modal"
+                  color="black"
+                />
+                <BottomSheetModal
+                  ref={bottomSheetModalRef}
+                  index={1}
+                  snapPoints={snapPoints}
+                >
+                  <BottomSheetView >
+                    <Text>Awesome 🎉</Text>
+                  </BottomSheetView>
+                </BottomSheetModal>
+              </View>
+            </BottomSheetModalProvider>*/}
+
+          </View>
+        </View>
+
       </View>
-      {/* <TouchableOpacity style={styles.searchBtn} onPress={handleSearch}>
-        <Text style={styles.searchText}>Search</Text>
-      </TouchableOpacity> */}
+
       <Button
         // icon="search-web"
         mode="elevated"
@@ -281,9 +356,14 @@ const SearchBus = () => {
         color="white"
         onPress={handleSearch}
         style={styles.searchBtn}
+        className="min-w-full"
         dark="true"
       >
-        {loading ? <ActivityIndicator animating={true} color={'white'} /> : 'Search Bus'}
+        {loading ? (
+          <ActivityIndicator animating={true} color={"white"} />
+        ) : (
+          "Search Buses"
+        )}
       </Button>
       {showRoutes && (
         <ScrollView style={styles.routesContainer}>
@@ -304,13 +384,7 @@ const SearchBus = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    padding: 16,
-  },
   searchBtn: {
-    width: "50%",
     backgroundColor: "#FF0000",
     borderRadius: 25,
     height: 50,
@@ -320,16 +394,11 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     fontWeight: 500,
-
   },
   searchText: {
     color: "white",
   },
-  pickerContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 20,
-  },
+
   routeButton: {
     padding: 10,
     marginVertical: 5,
@@ -387,6 +456,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "#ffffff",
+  },
+  errorText: {
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 12,
   },
 });
 
