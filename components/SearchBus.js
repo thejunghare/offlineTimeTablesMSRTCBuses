@@ -1,10 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, {
   useState,
-  useEffect,
-  useRef,
-  useCallback,
-  useMemo,
+  useEffect
 } from "react";
 import {
   View,
@@ -18,12 +15,8 @@ import { Card, Icon } from "react-native-elements";
 import { Button, ActivityIndicator } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Calendar, LocaleConfig } from "react-native-calendars";
-import {
-  BottomSheetModal,
-  BottomSheetView,
-  BottomSheetModalProvider,
-} from '@gorhom/bottom-sheet';
+import DateTimePicker from "@react-native-community/datetimepicker";
+import moment from "moment";
 
 const SearchBus = () => {
   const [loading, setLoading] = useState(false);
@@ -155,12 +148,19 @@ const SearchBus = () => {
   };
 
   const renderBuses = () => {
-    if (loading) {
+    /* if (loading) {
       return <Text style={styles.errorText}>Loading..!</Text>;
-    }
+    } */
 
     if (noBusesFound) {
-      return <Text style={styles.errorText}>No buses available..!</Text>;
+      return (
+        <Text
+          style={styles.errorText}
+          className="mt-5 text-base text-center font-bold "
+        >
+          No buses available..!
+        </Text>
+      );
     }
     if (buses.length > 0) {
       return (
@@ -239,28 +239,36 @@ const SearchBus = () => {
     }
   };
 
-  /* const [selected, setSelected] = useState(
-    new Date().toISOString().split("T")[0]
-  );
+  const [pickerStyle, setPickerStyle] = useState({
+    color: "gray",
+  });
 
-  const [showPicker, setShowPicker] = useState(false);
-  */
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState("date");
+  const [show, setShow] = useState(false);
 
-  // ref
-  const bottomSheetModalRef = useRef < BottomSheetModal > (null);
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(false);
+    setDate(currentDate);
+  };
 
-  // variables
-  const snapPoints = useMemo(() => ['25%', '50%'], []);
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
 
-  // callbacks
-  const handleOpenCalendar = useCallback(() => {
-    bottomSheetModalRef.current?.present();
-  }, []);
+  const showDatepicker = () => {
+    showMode("date");
+  };
 
-
+  const formattedDate = moment(date).format("ddd D-MMM");
 
   return (
-    <View className="flex-1 p-4 min-w-full bg-white">
+    <View className="flex-1 p-4 min-w-full bg-neutral-50">
+      <Text className="text-xl subpixel-antialiased	not-italic font-extrabold	tracking-tight leading-relaxed mb-5">
+        Search Bus
+      </Text>
       <View className="border border-gray-400 rounded-2xl mb-5 grid grid-cols-1 divide-y divide-gray-400 divide-solid">
         {/* first picker */}
         <View className="w-full px-2 flex flex-row items-center justify-between">
@@ -270,9 +278,17 @@ const SearchBus = () => {
 
           <View className="w-11/12">
             <Picker
+              style={pickerStyle}
               selectedValue={source}
+              dropdownIconColor="black"
+              mode="dropdown"
               onValueChange={(itemValue, itemIndex) => {
                 setSource(itemValue);
+                setPickerStyle({
+                  ...pickerStyle,
+                  color: "black",
+                  fontWeight: 900,
+                });
               }}
             >
               <Picker.Item label="From" value="" />
@@ -281,6 +297,7 @@ const SearchBus = () => {
                   key={item.id}
                   label={item.name}
                   value={item.name}
+                  className="text-red-700"
                 />
               ))}
             </Picker>
@@ -295,10 +312,18 @@ const SearchBus = () => {
 
           <View className="w-11/12">
             <Picker
-              className="text-slate-400"
+              style={pickerStyle}
+              dropdownIconColor="black"
+              mode="dropdown"
               selectedValue={destination}
               onValueChange={(itemValue, itemIndex) => {
                 setDestination(itemValue);
+
+                setPickerStyle({
+                  ...pickerStyle,
+                  color: "black",
+                  fontWeight: 900,
+                });
               }}
             >
               <Picker.Item label="To" value="" />
@@ -315,49 +340,41 @@ const SearchBus = () => {
 
         <View className="w-full px-2 flex flex-row items-center justify-between">
           <View className=" w-1/12">
-            <MaterialCommunityIcons
-              name="calendar-clock"
-              size={24}
-              color="black"
-            />
+            <TouchableOpacity onPress={showDatepicker}>
+              <MaterialCommunityIcons
+                name="calendar-clock"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
           </View>
 
           <View className="w-11/12">
-            <Text className="p-5">Tue 9-Apr</Text>
-            {/* <BottomSheetModalProvider>
-              <View >
-                <Button
-                  onPress={handleOpenCalendar}
-                  title="Present Modal"
-                  color="black"
-                />
-                <BottomSheetModal
-                  ref={bottomSheetModalRef}
-                  index={1}
-                  snapPoints={snapPoints}
-                >
-                  <BottomSheetView >
-                    <Text>Awesome 🎉</Text>
-                  </BottomSheetView>
-                </BottomSheetModal>
-              </View>
-            </BottomSheetModalProvider>*/}
-
+            <Text className="p-5 text-black-50 font-bold text-base">
+              {" "}
+              {formattedDate}
+            </Text>
+            {show && (
+              <DateTimePicker
+                testID="dateTimePicker"
+                value={date}
+                mode={mode}
+                is24Hour={false}
+                onChange={onChange}
+              />
+            )}
           </View>
         </View>
-
       </View>
 
       <Button
-        // icon="search-web"
         mode="elevated"
-        uppercase="false"
-        buttonColor="#FF0000"
-        color="white"
         onPress={handleSearch}
         style={styles.searchBtn}
-        className="min-w-full"
+        className="shadow-xl rounded-3xl p-2 text-base lowercase"
         dark="true"
+        icon="magnify"
+        color="white"
       >
         {loading ? (
           <ActivityIndicator animating={true} color={"white"} />
@@ -365,6 +382,7 @@ const SearchBus = () => {
           "Search Buses"
         )}
       </Button>
+
       {showRoutes && (
         <ScrollView style={styles.routesContainer}>
           {routes.map((route) => (
@@ -385,18 +403,7 @@ const SearchBus = () => {
 
 const styles = StyleSheet.create({
   searchBtn: {
-    backgroundColor: "#FF0000",
-    borderRadius: 25,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 10,
-    marginLeft: "auto",
-    marginRight: "auto",
-    fontWeight: 500,
-  },
-  searchText: {
-    color: "white",
+    backgroundColor: "#C51E3A",
   },
 
   routeButton: {
@@ -405,6 +412,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "#ddd",
   },
+
   busContainer: {
     paddingHorizontal: 10,
     paddingVertical: 5,
@@ -443,12 +451,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#FF0000",
+    backgroundColor: "#C51E3A",
     padding: 10,
     borderRadius: 10,
   },
   busNavigationButton: {
-    backgroundColor: "#FF0000",
+    backgroundColor: "#C51E3A",
     borderRadius: 20,
     padding: 10,
   },
@@ -456,11 +464,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "#ffffff",
-  },
-  errorText: {
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 12,
   },
 });
 
