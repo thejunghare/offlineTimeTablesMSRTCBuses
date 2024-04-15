@@ -42,9 +42,9 @@
     "destination": "Mumbai Central",
     "stops": [
       { "name": "Satara", "fare": "₹0", "time": "10:00 AM" },
-      { "name": "Panvel", "fare": "₹450", "time": "10:10 AM" },
-      { "name": "Vashi Highway", "fare": "₹500", "time": "10:20 AM" },
-      { "name": "Mumbai Central", "fare": "₹700", "time": "11:10 AM" }
+      { "name": "Panvel", "fare": "₹450", "time": "4:00 PM" },
+      { "name": "Vashi Highway", "fare": "₹500", "time": "04:30 PM" },
+      { "name": "Mumbai Central", "fare": "₹700", "time": "05:30 PM" }
     ]
   }
 ]
