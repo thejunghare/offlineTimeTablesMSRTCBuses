@@ -138,7 +138,7 @@ const SearchBus = () => {
     };
 
     const handleBusPress = (bus) => {
-        navigation.navigate('BusDetailsScreen', {bus});
+        navigation.navigate('BusDetailsScreen', {bus, source, destination});
     };
 
     const renderBuses = () => {
