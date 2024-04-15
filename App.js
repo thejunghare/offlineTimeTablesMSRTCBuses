@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import React, { useState } from "react";
-import { View } from "react-native";
+import { View,Animated } from "react-native";
 import {
   NavigationContainer,
   getFocusedRouteNameFromRoute,
@@ -13,14 +13,15 @@ import { AntDesign } from "@expo/vector-icons";
 
 // screen imports
 import SearchBus from "./components/SearchBus";
+import SearchStack from "./components/SearchStack";
 import LoginStack from "./components/LoginStack";
 import TicketStack from "./components/TicketStack";
 import SettingScreen from "./components/Settings";
 
 const Feed = () => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <SearchBus />
+    <View style={{ flex: 1 }}>
+      <SearchStack />
     </View>
   );
 };
@@ -67,10 +68,10 @@ const MyTabs = ({ route }) => {
         name="Home"
         component={Feed}
         options={{
+        headerShown: false,
           headerStyle: {
             backgroundColor: 'white',
             shadowColor: '#000',
-            shadowOffset: { width: 0, height: 2 },
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
@@ -89,7 +90,6 @@ const MyTabs = ({ route }) => {
           headerStyle: {
             backgroundColor: 'white',
             shadowColor: '#000',
-            shadowOffset: { width: 0, height: 2 },
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
@@ -105,14 +105,7 @@ const MyTabs = ({ route }) => {
         component={Profile}
         options={{
           headerShown: false,
-          headerStyle: {
-            backgroundColor: 'white',
-            shadowColor: '#000',
-            shadowOffset: { width: 0, height: 2 },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-            elevation: 5,
-          },
+
           tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="user" size={24} color={color} />
@@ -126,7 +119,6 @@ const MyTabs = ({ route }) => {
           headerStyle: {
             backgroundColor: 'white',
             shadowColor: '#000',
-            shadowOffset: { width: 0, height: 2 },
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,

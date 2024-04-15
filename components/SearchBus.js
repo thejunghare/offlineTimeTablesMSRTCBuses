@@ -17,8 +17,10 @@ import {Picker} from "@react-native-picker/picker";
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import moment from "moment";
+import {useNavigation} from "@react-navigation/native";
 
 const SearchBus = () => {
+    const navigation = useNavigation();
     const [loading, setLoading] = useState(false);
     const [source, setSource] = useState("");
     const [destination, setDestination] = useState("");
@@ -135,6 +137,10 @@ const SearchBus = () => {
         }
     };
 
+    const handleBusPress = (bus) => {
+        navigation.navigate('BusDetailsScreen', {bus});
+    };
+
     const renderBuses = () => {
         if (noBusesFound) {
             return (
@@ -187,33 +193,37 @@ const SearchBus = () => {
                         const totalJourneyTime = `${totalHours}h ${totalMinutes}m`;
 
                         return (
-                            <View key={index}
-                                  className="bg-white shadow-lg rounded-lg w-full m-auto flex flex-col items-center mb-4">
-                                <View className="w-full flex flex-row items-center justify-between px-3 pt-3">
-                                    <Text
-                                        className="font-extrabold text-base text-center">{bus.arrivalTimeAtSource} - {destinationTime}</Text>
-                                    <Text className="font-medium text-base text-center"><Text className="font-thin text-sm text-slate-400">From</Text> {bus.fare}</Text>
-                                </View>
+                            <TouchableOpacity key={index} onPress={() => handleBusPress(bus)}>
+                                <View key={index}
+                                      className="bg-white shadow-lg rounded-lg w-full m-auto flex flex-col items-center mb-4">
 
-                                <View className="w-full flex flex-row items-start justify-start px-3">
-                                    <Text
-                                        className="font-thin text-sm text-slate-400">{totalJourneyTime} | 24
-                                        Seats</Text>
-                                </View>
+                                    <View className="w-full flex flex-row items-center justify-between px-3 pt-3">
+                                        <Text
+                                            className="font-extrabold text-base text-center">{bus.arrivalTimeAtSource} - {destinationTime}</Text>
+                                        <Text className="font-medium text-base text-center"><Text
+                                            className="font-thin text-sm text-slate-400">From</Text> {bus.fare}</Text>
+                                    </View>
 
-                                <View className="w-full flex flex-row items-center justify-between p-3">
-                                    <Text className="text-base font-medium">MSTRC <Text
-                                        className="font-thin text-sm text-slate-400">.</Text> {selectedRoute} </Text>
-                                    <Text className="text-white bg-green-500 px-2 rounded-lg font-medium">4.5</Text>
+                                    <View className="w-full flex flex-row items-start justify-start px-3">
+                                        <Text
+                                            className="font-thin text-sm text-slate-400">{totalJourneyTime} | 24
+                                            Seats</Text>
+                                    </View>
+
+                                    <View className="w-full flex flex-row items-center justify-between p-3">
+                                        <Text className="text-base font-medium">MSTRC <Text
+                                            className="font-thin text-sm text-slate-400">.</Text> {selectedRoute}
+                                        </Text>
+                                        <Text className="text-white bg-green-500 px-2 rounded-lg font-medium">4.5</Text>
+                                    </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         );
                     })}
                 </View>
             );
         }
     };
-
 
     const fetchData = async () => {
         try {
