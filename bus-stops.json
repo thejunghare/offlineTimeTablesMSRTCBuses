@@ -30,5 +30,57 @@
   {
     "id": 8,
     "name": "Vashi Highway"
+  },
+  {
+    "id": 9,
+    "name": "Sanpada Highway"
+  },
+  {
+    "id": 10,
+    "name": "Juinagar Highway"
+  },
+  {
+    "id": 11,
+    "name": "Lonawala"
+  },
+  {
+    "id": 12,
+    "name": "Wakhad"
+  },
+  {
+    "id": 13,
+    "name": "Baner"
+  },
+  {
+    "id": 14,
+    "name": "Kudhal"
+  },
+  {
+    "id": 15,
+    "name": "shirur"
+  },
+  {
+    "id": 16,
+    "name": "Tunnel"
+  },
+  {
+    "id": 17,
+    "name": "Raja Academy"
+  },
+  {
+    "id": 18,
+    "name": "Bhondavade"
+  },
+  {
+    "id": 19,
+    "name": "Parli Fhata"
+  },
+  {
+    "id": 20,
+    "name": "Gajavadi"
+  },
+  {
+    "id": 21,
+    "name": "Dnyanshree College"
   }
 ]
