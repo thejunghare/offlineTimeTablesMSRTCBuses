@@ -5,10 +5,56 @@
     "source": "Satara",
     "destination": "Sajjangad",
     "stops": [
-      { "name": "Satara", "fare": "₹0", "time": "10:00 AM" },
-      { "name": "Rajwada", "fare": "₹5", "time": "10:10 AM" },
-      { "name": "Samarth Mandir", "fare": "₹10", "time": "10:20 AM" },
-      { "name": "Sajjangad", "fare": "₹25", "time": "11:10 AM" }
+      {
+        "name": "Satara",
+        "fare": "₹0",
+        "time": "10:00 AM"
+      },
+      {
+        "name": "Rajwada",
+        "fare": "₹5",
+        "time": "10:10 AM"
+      },
+      {
+        "name": "Samarth Mandir",
+        "fare": "₹10",
+        "time": "10:20 AM"
+      },
+      {
+        "name": "Tunnel",
+        "fare": "₹10",
+        "time": "10:20 AM"
+      },
+      {
+        "name": "Raja Academy",
+        "fare": "₹15",
+        "time": "10:30 AM"
+      },
+      {
+        "name": "Bhondavade",
+        "fare": "₹15",
+        "time": "10:40 AM"
+      },
+      {
+        "name": "Parli Fhata",
+        "fare": "₹15",
+        "time": "10:50 AM"
+      },
+      {
+        "name": "Gajavadi",
+        "fare": "₹20",
+        "time": "11:00 AM"
+      },
+      {
+        "name": "Dnyanshree College",
+        "fare": "₹20",
+        "time": "11:20 AM"
+      },
+      {
+        "name": "Sajjangad",
+        "fare": "₹25",
+        "time": "11:30 AM"
+      }
     ]
   },
   {
@@ -17,10 +63,56 @@
     "source": "Satara",
     "destination": "Sajjangad",
     "stops": [
-      { "name": "Satara", "fare": "₹0", "time": "10:20 AM" },
-      { "name": "Rajwada", "fare": "₹5", "time": "10:30 AM" },
-      { "name": "Samarth Mandir", "fare": "₹10", "time": "10:40 AM" },
-      { "name": "Sajjangad", "fare": "₹25", "time": "11:30 AM" }
+      {
+        "name": "Satara",
+        "fare": "₹0",
+        "time": "10:30 AM"
+      },
+      {
+        "name": "Rajwada",
+        "fare": "₹5",
+        "time": "10:40 AM"
+      },
+      {
+        "name": "Samarth Mandir",
+        "fare": "₹10",
+        "time": "10:50 AM"
+      },
+      {
+        "name": "Tunnel",
+        "fare": "₹10",
+        "time": "11:00 AM"
+      },
+      {
+        "name": "Raja Academy",
+        "fare": "₹15",
+        "time": "11:10 AM"
+      },
+      {
+        "name": "Bhondavade",
+        "fare": "₹15",
+        "time": "11:20 AM"
+      },
+      {
+        "name": "Parli Fhata",
+        "fare": "₹15",
+        "time": "11:30 AM"
+      },
+      {
+        "name": "Gajavadi",
+        "fare": "₹20",
+        "time": "11:40 AM"
+      },
+      {
+        "name": "Dnyanshree College",
+        "fare": "₹20",
+        "time": "12:00 PM"
+      },
+      {
+        "name": "Sajjangad",
+        "fare": "₹25",
+        "time": "12:10 PM"
+      }
     ]
   },
   {
@@ -29,10 +121,61 @@
     "source": "Satara",
     "destination": "Thoseghar",
     "stops": [
-      { "name": "Satara", "fare": "₹0", "time": "10:30 AM" },
-      { "name": "Rajwada", "fare": "₹5", "time": "10:40 AM" },
-      { "name": "Samarth Mandir", "fare": "₹10", "time": "11:00 AM" },
-      { "name": "Thoseghar", "fare": "₹25", "time": "12:00 PM" }
+      {
+        "name": "Satara",
+        "fare": "₹0",
+        "time": "10:30 AM"
+      },
+      {
+        "name": "Rajwada",
+        "fare": "₹5",
+        "time": "10:40 AM"
+      },
+      {
+        "name": "Samarth Mandir",
+        "fare": "₹10",
+        "time": "10:50 AM"
+      },
+      {
+        "name": "Tunnel",
+        "fare": "₹10",
+        "time": "11:00 AM"
+      },
+      {
+        "name": "Raja Academy",
+        "fare": "₹15",
+        "time": "11:10 AM"
+      },
+      {
+        "name": "Bhondavade",
+        "fare": "₹15",
+        "time": "11:20 AM"
+      },
+      {
+        "name": "Parli Fhata",
+        "fare": "₹15",
+        "time": "11:30 AM"
+      },
+      {
+        "name": "Gajavadi",
+        "fare": "₹20",
+        "time": "11:40 AM"
+      },
+      {
+        "name": "Dnyanshree College",
+        "fare": "₹20",
+        "time": "12:00 PM"
+      },
+      {
+        "name": "Sajjangad",
+        "fare": "₹25",
+        "time": "12:10 PM"
+      },
+      {
+        "name": "Thoseghar",
+        "fare": "₹30",
+        "time": "12:00 PM"
+      }
     ]
   },
   {
@@ -41,10 +184,61 @@
     "source": "Satara",
     "destination": "Mumbai Central",
     "stops": [
-      { "name": "Satara", "fare": "₹0", "time": "10:00 AM" },
-      { "name": "Panvel", "fare": "₹450", "time": "4:00 PM" },
-      { "name": "Vashi Highway", "fare": "₹500", "time": "04:30 PM" },
-      { "name": "Mumbai Central", "fare": "₹700", "time": "05:30 PM" }
+      {
+        "name": "Satara",
+        "fare": "₹0",
+        "time": "10:00 AM"
+      },
+      {
+        "name": "Kudal",
+        "fare": "₹25",
+        "time": "10:00 AM"
+      },
+      {
+        "name": "Shirur",
+        "fare": "₹100",
+        "time": "10:00 AM"
+      },
+      {
+        "name": "Baner",
+        "fare": "₹150",
+        "time": "10:00 AM"
+      },
+      {
+        "name": "Wakhad",
+        "fare": "₹170",
+        "time": "10:00 AM"
+      },
+      {
+        "name": "Lonawala",
+        "fare": "₹250",
+        "time": "10:00 AM"
+      },
+      {
+        "name": "Panvel",
+        "fare": "₹400",
+        "time": "4:00 PM"
+      },
+      {
+        "name": "Juinagar",
+        "fare": "₹450",
+        "time": "4:00 PM"
+      },
+      {
+        "name": "Sanpada Highway",
+        "fare": "₹450",
+        "time": "4:00 PM"
+      },
+      {
+        "name": "Vashi Highway",
+        "fare": "₹500",
+        "time": "04:30 PM"
+      },
+      {
+        "name": "Mumbai Central",
+        "fare": "₹700",
+        "time": "05:30 PM"
+      }
     ]
   }
 ]
