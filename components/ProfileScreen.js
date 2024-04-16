@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View, TouchableOpacity, StyleSheet, FlatList, } from 'react-native'
+import { Text, View } from 'react-native'
 import { firebase, auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
+import { Avatar, Divider, List } from "react-native-paper";
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-
-
-export default function ProfileScreen() {
+const ProfileScreen = () => {
     const navigation = useNavigation();
 
     const handleLogout = () => {
@@ -22,7 +22,6 @@ export default function ProfileScreen() {
     useEffect(() => {
         const fetchTickets = async () => {
             const bookedTicketsRef = firebase.firestore().collection('bookedTickets');
-            // Use try-catch for error handling
             try {
                 const querySnapshot = await bookedTicketsRef.get();
                 const ticketData = querySnapshot.docs.map(doc => ({
@@ -35,69 +34,72 @@ export default function ProfileScreen() {
             }
         };
 
-        // Call the function to fetch tickets
         fetchTickets();
 
-        // Cleanup function
         return () => {
-            // Unsubscribe from Firestore listener if any
         };
+
     }, []);
 
     return (
-        <View style={styles.container}>
-            <Text>Email: {auth.currentUser?.email}</Text>
-            <TouchableOpacity style={styles.logoutBtn} onPress={handleLogout}>
-                <Text style={styles.loginText}>Logout</Text>
-            </TouchableOpacity>
+        <View className="flex-1 w-full bg-white">
+            <View className="flex flex-row items-center justify-between p-5">
+                <View className={"w-1/5"}>
+                    <Avatar.Text size={64} label="PJ" />
+                </View>
 
-
-
-            <View>
-                {tickets.map(ticket => (
-                    <View key={ticket.id}>
-                        <Text>{ticket.BusName}</Text>
+                <View className="w-4/5 flex flex-row items-center justify-between">
+                    <View>
+                        <Text className="text-base">{auth.currentUser?.email}</Text>
                     </View>
-                ))}
+                    <View>
+                        <MaterialCommunityIcons name="logout" size={24} color="black" />
+                    </View>
+                </View>
+
+            </View>
+
+
+            <Divider />
+
+            <View className={"p-5 text-base"}>
+                <List.Item
+                    title="Account"
+                    //                    titleStyle={{fontWeight:700}}
+                    description="Update profile, update password"
+                    left={props => <List.Icon {...props} icon="account-outline" />}
+                />
+
+                <List.Item
+                    title="Tickets"
+                    description="Reversed tickets, unreversed tickets"
+                    left={props => <List.Icon {...props} icon="ticket-outline" />}
+                />
+
+                <List.Item
+                    title="Pass"
+                    description="Monthly pass, renew, generate"
+                    left={props => <List.Icon {...props} icon="ticket-outline" />}
+                />
+
+                <List.Item
+                    title="Help"
+                    description="Help center, contact Us, privacy policy"
+                    left={props => <List.Icon {...props} icon="help-circle-outline" />}
+                />
+                <List.Item
+                    title="Call Support"
+                    description="Help center, contact Us, privacy policy"
+                    left={props => <List.Icon {...props} icon="call-made" />}
+                />
+                <List.Item
+                    title="Feedback"
+                    description="Help center, contact Us, privacy policy"
+                    left={props => <List.Icon {...props} icon="bug-outline" />}
+                />
             </View>
         </View>
     )
 }
 
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        minWidth: '100%',
-        padding: 16,
-    },
-    inputView: {
-        width: '80%',
-        backgroundColor: '#fff',
-        borderRadius: 25,
-        height: 50,
-        marginBottom: 20,
-        justifyContent: 'center',
-        padding: 20,
-    },
-    inputText: {
-        height: 50,
-        color: 'black',
-    },
-    logoutBtn: {
-        width: '50%',
-        backgroundColor: '#FF0000',
-        borderRadius: 25,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 10,
-    },
-    loginText: {
-        color: 'white',
-    },
-    signupText: {
-        color: '#003f5c',
-    },
-});
+export default ProfileScreen
