@@ -1,9 +1,14 @@
-![Image Alt Text](./assets/app-screenshot/search.png)
-![Image Alt Text](./assets/app-screenshot/search-result.png)
-![Image Alt Text](./assets/app-screenshot/bus-details.png)
-![Image Alt Text](./assets/app-screenshot/create-account.png)
-![Image Alt Text](./assets/app-screenshot/login-screen.png)
-![Image Alt Text](./assets/app-screenshot/profile.png)
+<div style="display: flex; justify-content: center;">
+    <img src="./assets/app-screenshot/search.png" alt="Search Screenshot" width="200" />
+    <img src="./assets/app-screenshot/search-result.png" alt="Search Result Screenshot" width="200" />
+    <img src="./assets/app-screenshot/bus-details.png" alt="Bus Details Screenshot" width="200" />
+</div>
+<div style="display: flex; justify-content: center;">
+    <img src="./assets/app-screenshot/create-account.png" alt="Create Account Screenshot" width="200" />
+    <img src="./assets/app-screenshot/login-screen.png" alt="Login Screen Screenshot" width="200" />
+    <img src="./assets/app-screenshot/profile.png" alt="Profile Screenshot" width="200" />
+</div>
+
 
 
 ## MSRTC Bus Timetable App
