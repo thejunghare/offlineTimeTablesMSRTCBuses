@@ -1,3 +1,11 @@
+![Image Alt Text](./assets/app-screenshot/search.png)
+![Image Alt Text](./assets/app-screenshot/search-result.png)
+![Image Alt Text](./assets/app-screenshot/bus-details.png)
+![Image Alt Text](./assets/app-screenshot/create-account.png)
+![Image Alt Text](./assets/app-screenshot/login-screen.png)
+![Image Alt Text](./assets/app-screenshot/profile.png)
+
+
 ## MSRTC Bus Timetable App
 
 This repository contains the code for a final year project that aims to develop a mobile application using React Native and Firebase. The project focuses on providing offline timetables of MSRTC buses in remote areas of Satara. The application aims to improve the accessibility of bus schedules for users, even in areas with limited or no internet connectivity.
