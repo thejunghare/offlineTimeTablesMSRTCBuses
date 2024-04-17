@@ -1,15 +1,14 @@
 import * as React from 'react'
-import { View, StyleSheet, TouchableOpacity, } from 'react-native'
-import { Menu, Divider } from 'react-native-paper'
-import { MaterialIcons } from '@expo/vector-icons'
+import { View, } from 'react-native'
+import { List, TouchableRipple } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 
 const TicketOptionScreen = () => {
     const navigation = useNavigation()
 
-    const handleReservedTicket = () => {
-        navigation.navigate('ReservedTicketScreen')
-    }
+    /*   const handleReservedTicket = () => {
+          navigation.navigate('ReservedTicketScreen')
+      } */
 
     const handleUnReservedTicket = () => {
         navigation.navigate('UnReservedTicketScreen')
@@ -20,65 +19,36 @@ const TicketOptionScreen = () => {
     }
 
     return (
-        <View style={styles.container}>
-            <View style={styles.myMenu}>
-                <Menu.Item icon="ticket-confirmation-outline" onPress={handleUnReservedTicket} title="Un-Reversed Ticket" />
+        <View className="flex-1 w-full bg-white">
+            <View className="border border-slate-400 m-5 rounded-lg">
+                <TouchableRipple
+                    onPress={handleUnReservedTicket}
+                    rippleColor="rgba(0, 0, 0, .32)"
+                    className="border-slate-400 border-b"
+                >
+                    <List.Item
+                        title="Unreserved ticket"
+                        description="Quick book, paper less travel"
+                        left={props => <List.Icon {...props} icon="ticket-outline" />}
+                        right={(props) => <List.Icon {...props} icon="arrow-right" />}
+                    />
+                </TouchableRipple>
 
-                <TouchableOpacity onPress={handleUnReservedTicket}>
-                    <MaterialIcons name="arrow-forward-ios" size={24} color="black" />
-                </TouchableOpacity>
+                <TouchableRipple
+                    onPress={handlePassTicket}
+                    rippleColor="rgba(0, 0, 0, .32)"
+                >
+                    <List.Item
+                        title="Monthly pass"
+                        description="Get new monthly pass"
+                        left={props => <List.Icon {...props} icon="ticket-account" />}
+                        right={(props) => <List.Icon {...props} icon="arrow-right" />}
+
+                    />
+                </TouchableRipple>
             </View>
-
-            <Divider />
-            <Divider />
-            <Divider />
-
-            <View style={styles.myMenu}>
-                <Menu.Item icon="ticket-outline" onPress={handleReservedTicket} title="Reversed Ticket" />
-
-                <TouchableOpacity onPress={handleReservedTicket}>
-                    <MaterialIcons name="arrow-forward-ios" size={24} color="black" />
-                </TouchableOpacity>
-            </View>
-
-            <Divider />
-            <Divider />
-            <Divider />
-
-            <View style={styles.myMenu}>
-                <Menu.Item icon="passport" onPress={handlePassTicket} title="Monthly Pass" />
-
-                <TouchableOpacity onPress={handlePassTicket}>
-                    <MaterialIcons name="arrow-forward-ios" size={24} color="black" />
-                </TouchableOpacity>
-            </View>
-
-            <Divider />
-            <Divider />
-            <Divider />
-        </View>
+        </View >
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        minWidth: '100%',
-        backgroundColor: 'white',
-
-    },
-    subHeader: {
-        textAlign: 'left'
-    },
-    myMenu: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginRight: 25,
-        // marginLeft: 25,
-
-    },
-
-})
 
 export default TicketOptionScreen

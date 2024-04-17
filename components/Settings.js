@@ -1,117 +1,126 @@
-import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { List, Text, Switch, Divider, IconButton } from 'react-native-paper'
-import { MaterialIcons } from '@expo/vector-icons'
+import * as React from "react";
+import { View } from "react-native";
+import { Text, List, TouchableRipple, RadioButton } from "react-native-paper";
 
 const Settings = () => {
-  const [isSwitchOn, setIsSwitchOn] = React.useState(false)
-  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn)
-
+  const [checked, setChecked] = React.useState("first");
   return (
-    <View style={styles.container}>
-      <List.Section >
-        <List.Subheader style={styles.subHeader}>App setting</List.Subheader>
+    <View className="flex-1 w-full bg-white">
+      <Text className="text-xs font-bold px-5 mt-5 ">App settings</Text>
+      <View className="border border-slate-400 m-5 rounded-lg">
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-slate-400 "
+        >
+          <List.Item
+            title="Device Permission"
+            description="Quick book, paper less travel"
+            left={(props) => <List.Icon {...props} icon="cellphone-lock" />}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
 
-        <View style={styles.mySwitch}>
-          <View style={styles.mySwitch}>
-            <IconButton icon="white-balance-sunny" size={20} />
-            <Text style={styles.mySwitchText}>Enable dark theme</Text>
-          </View>
 
-          <Switch value={isSwitchOn} onValueChange={onToggleSwitch} color='black' />
-        </View>
+      </View>
 
-        <View style={styles.mySwitch}>
-          <View style={styles.mySwitch}>
-            <IconButton icon="cellphone" size={20} />
-            <Text style={styles.mySwitchText}>Device Permission</Text>
-          </View>
+      <Text className="text-xs font-bold px-5">Theme</Text>
+      <View className="border border-slate-400 m-5 rounded-lg">
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-slate-400 border-b"
+        >
+          <List.Item
+            title="System"
+            description="Quick book, paper less travel"
+            left={(props) => <List.Icon {...props} icon="theme-light-dark" />}
+            right={(props) => (
+              <RadioButton
+                value="first"
+                status={checked === "first" ? "checked" : "unchecked"}
+                onPress={() => setChecked("first")}
+              />
+            )}
+          />
+        </TouchableRipple>
 
-          <MaterialIcons name="arrow-forward-ios" size={24} color="black" />
-        </View>
-      </List.Section>
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-slate-400 border-b"
+        >
+          <List.Item
+            title="Dark"
+            description="Quick book, paper less travel"
+            left={(props) => <List.Icon {...props} icon="moon-new" />}
+            right={(props) => (
+              <RadioButton
+                value="first"
+                status={checked === "first" ? "checked" : "unchecked"}
+                onPress={() => setChecked("first")}
+              />
+            )}
+          />
+        </TouchableRipple>
 
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
+        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
+          <List.Item
+            title="Light"
+            description="Get new monthly pass"
+            left={(props) => (
+              <List.Icon {...props} icon="weather-sunny" />
+            )}
+            right={(props) => (
+              <RadioButton
+                value="first"
+                status={checked === "first" ? "checked" : "unchecked"}
+                onPress={() => setChecked("first")}
+              />
+            )}
+          />
+        </TouchableRipple>
+      </View>
 
-      <List.Section >
-        <List.Subheader style={styles.subHeader}>App setting</List.Subheader>
+      <Text className="text-xs font-bold px-5">About</Text>
+      <View className="border border-slate-400 m-5 rounded-lg">
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-slate-400 border-b"
+        >
+          <List.Item
+            title="App version"
+            description="Quick book, paper less travel"
+            left={(props) => <List.Icon {...props} icon="application-braces-outline" />}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
 
-        <View style={styles.mySwitch}>
-          <View style={styles.mySwitch}>
-            <IconButton icon="information-outline" size={20} />
-            <Text style={styles.mySwitchText}>App version</Text>
-          </View>
+        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
+          <List.Item
+            title="Meet the team"
+            description="Get new monthly pass"
+            left={(props) => (
+              <List.Icon {...props} icon="account-group-outline" />
+            )}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
+      </View>
 
-          <Text>v0.0.3.1</Text>
-        </View>
+      <Text className="text-xs font-bold px-5 mt-5 ">Account</Text>
+      <View className="border border-slate-400 m-5 rounded-lg">
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-slate-400 "
+        >
+          <List.Item
+            title="Delete account"
+            description="Delete account"
+            left={(props) => <List.Icon {...props} icon="delete-outline" />}
+          />
+        </TouchableRipple>
 
-        <View style={styles.mySwitch}>
-          <View style={styles.mySwitch}>
-            <IconButton icon="account-group-outline" size={20} />
-            <Text style={styles.mySwitchText}>Meet the team @EZGO</Text>
-          </View>
 
-          <MaterialIcons name="arrow-forward-ios" size={24} color="black" />
-        </View>
-      </List.Section>
-
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-      <Divider />
-
-      <Text style={styles.text}>
-        Made with ❤ by junghare.tech
-      </Text>
+      </View>
     </View>
-  )
-
-}
+  );
+};
 export default Settings;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    minWidth: '100%',
-    // padding: 50,
-    backgroundColor: 'white',
-  },
-  subHeader: {
-    textAlign: 'left'
-  },
-  text: {
-    marginTop: 45,
-    textAlign: 'center',
-    fontWeight: '600',
-  },
-  mySwitch: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginRight: 10,
-    marginLeft: 10,
-    marginBottom: 8
-
-    /* borderWidth: 4,
-    borderColor: '#20232a', */
-  },
-  mySwitchText: {
-    fontSize: 15,
-    fontWeight: '400'
-  }
-})
