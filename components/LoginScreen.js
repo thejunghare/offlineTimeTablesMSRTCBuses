@@ -5,6 +5,7 @@ import {
     TextInput,
     TouchableOpacity,
     Keyboard,
+    Animated,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { auth } from "../firebase";
@@ -97,7 +98,7 @@ const LoginScreen = () => {
                 </TouchableOpacity>
 
                 <Button
-                    mode="contained"
+                    mode="elevated"
                     onPress={handleLogin}
                     className=" rounded w-11/12 p-2 text-base lowercase bg-ezgo-red"
                     dark="true"

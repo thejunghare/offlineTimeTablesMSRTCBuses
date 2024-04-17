@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, TouchableOpacity } from 'react-native'
 import { firebase, auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import { Avatar, Divider, List } from "react-native-paper";
@@ -53,7 +53,9 @@ const ProfileScreen = () => {
                         <Text className="text-base">{auth.currentUser?.email}</Text>
                     </View>
                     <View>
-                        <MaterialCommunityIcons name="logout" size={24} color="black" />
+                        <TouchableOpacity onPress={handleLogout} >
+                            <MaterialCommunityIcons name="logout" size={24} color="black" />
+                        </TouchableOpacity>
                     </View>
                 </View>
 

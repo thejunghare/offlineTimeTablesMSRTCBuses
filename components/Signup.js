@@ -58,7 +58,7 @@ const SignupScreen = () => {
             </TouchableOpacity>
 
             <Button
-                mode="contained"
+                mode="elevated"
                 onPress={handleSignup}
                 className=" rounded w-11/12 p-2 text-base lowercase bg-ezgo-red mb-5"
                 dark="true"
