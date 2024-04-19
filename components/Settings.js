@@ -5,7 +5,7 @@ import { Text, List, TouchableRipple, RadioButton } from "react-native-paper";
 const Settings = () => {
   const [checked, setChecked] = React.useState("first");
   return (
-    <View className="flex-1 w-full">
+    <View className="flex-1 w-full bg-gray-50">
       <Text className="text-xs font-bold px-5 mt-5 ">App settings</Text>
       <View className="bg-white border border-slate-200 m-5 rounded-xl">
         <TouchableRipple

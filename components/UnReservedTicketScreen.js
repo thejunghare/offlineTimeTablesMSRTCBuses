@@ -109,7 +109,7 @@ const UnReservedTicketScreen = () => {
   }, []);
 
   return (
-    <View className="w-full flex-1">
+    <View className="w-full flex-1 bg-gray-50">
       <Text className="text-xs font-bold px-5 mt-5 ">
         Purchase unreserved ticket
       </Text>

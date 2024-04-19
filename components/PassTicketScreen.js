@@ -36,7 +36,7 @@ const PassTicketScreen = () => {
     };
 
     return (
-        <View className="flex-1 items-center w-full">
+        <View className="flex-1 items-center w-full bg-gray-50">
 
 
             {tickets.map((ticket) => (

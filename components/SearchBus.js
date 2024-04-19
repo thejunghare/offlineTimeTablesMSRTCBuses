@@ -283,7 +283,7 @@ const SearchBus = () => {
   const [value, setValue] = useState(null);
 
   return (
-    <View className="flex-1 w-full">
+    <View className="flex-1 w-full bg-gray-50">
       <Text className="text-xs font-bold px-5 mt-5 ">Search buses</Text>
 
       <View className="m-5 bg-white border border-slate-200 rounded-xl grid grid-cols-1 divide-y divide-slate-200 divide-solid">
