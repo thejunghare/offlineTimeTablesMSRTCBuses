@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import React, { useState } from "react";
-import { View,Animated } from "react-native";
+import { View, Animated } from "react-native";
 import {
   NavigationContainer,
   getFocusedRouteNameFromRoute,
@@ -53,32 +53,43 @@ const Settings = () => {
 const Tab = createBottomTabNavigator();
 
 const MyTabs = ({ route }) => {
-  const focusedRoute = route ? getFocusedRouteNameFromRoute(route) : 'Feed';
+  const focusedRoute = route ? getFocusedRouteNameFromRoute(route) : "Feed";
 
   return (
     <Tab.Navigator
       initialRouteName="Feed"
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: focusedRoute === 'Feed' ? '#C51E3A' : undefined,
-        tabBarInactiveTintColor: focusedRoute === 'Feed' ? '#000000' : undefined,
-        // tabBarShowLabel: focusedRoute === 'Feed' ? true : false,
+        tabBarActiveTintColor: focusedRoute === "Feed" ? "#C51E3A" : undefined,
+        tabBarLabelStyle: {
+          fontWeight: 900,
+          fontSize: 11,
+          padding: 10,
+          letterSpacing: 0.5
+        },
+        tabBarStyle: {
+          height: 80,
+          padding: 15,
+        },
+        tabBarIconStyle: {
+          backgroundColor: "green",
+        },
       })}
     >
       <Tab.Screen
         name="Home"
         component={Feed}
         options={{
-        headerShown: false,
+          headerShown: false,
           headerStyle: {
-            backgroundColor: 'white',
-            shadowColor: '#000',
+            backgroundColor: "white",
+            shadowColor: "#000",
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
           },
-          tabBarLabel: () => null,
+          tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="home" size={24} color={color} />
+            <AntDesign name="home" size={26} color={color} />
           ),
         }}
       />
@@ -88,15 +99,15 @@ const MyTabs = ({ route }) => {
         options={{
           headerShown: false,
           headerStyle: {
-            backgroundColor: 'white',
-            shadowColor: '#000',
+            backgroundColor: "white",
+            shadowColor: "#000",
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
           },
-          tabBarLabel: () => null,
+          tabBarLabel: "Tickets",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ticket-outline" size={24} color={color} />
+            <Ionicons name="ticket-outline" size={26} color={color} />
           ),
         }}
       />
@@ -106,9 +117,9 @@ const MyTabs = ({ route }) => {
         options={{
           headerShown: false,
 
-          tabBarLabel: () => null,
+          tabBarLabel: "Account",
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="user" size={24} color={color} />
+            <AntDesign name="user" size={26} color={color} />
           ),
         }}
       />
@@ -117,15 +128,15 @@ const MyTabs = ({ route }) => {
         component={SettingScreen}
         options={{
           headerStyle: {
-            backgroundColor: 'white',
-            shadowColor: '#000',
+            backgroundColor: "white",
+            shadowColor: "#000",
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
           },
-          tabBarLabel: () => null,
+          tabBarLabel: "Settings",
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="setting" size={24} color={color} />
+            <AntDesign name="setting" size={26} color={color} />
           ),
         }}
       />
