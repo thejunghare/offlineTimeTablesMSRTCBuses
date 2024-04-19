@@ -2,112 +2,152 @@ import React, { useEffect, useState } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import { firebase, auth } from "../firebase";
 import { useNavigation } from "@react-navigation/native";
-import { Avatar, Divider, List } from "react-native-paper";
+import {
+  Avatar,
+  Divider,
+  List,
+  TouchableRipple,
+  RadioButton,
+} from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const ProfileScreen = () => {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-    const handleAccountPress = () => {
-        navigation.navigate("AccountScreen");
+  const [checked, setChecked] = React.useState("first");
+
+  const handleAccountPress = () => {
+    navigation.navigate("AccountScreen");
+  };
+
+  const handleHelpPress = () => {
+    navigation.navigate("HelpScreen");
+  };
+
+  const handleLogout = () => {
+    auth
+      .signOut()
+      .then(() => {
+        navigation.replace("Login");
+      })
+      .catch((error) => alert(error.message));
+  };
+
+  const [tickets, setTickets] = useState([]);
+
+  useEffect(() => {
+    const fetchTickets = async () => {
+      const bookedTicketsRef = firebase.firestore().collection("bookedTickets");
+      try {
+        const querySnapshot = await bookedTicketsRef.get();
+        const ticketData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setTickets(ticketData);
+      } catch (error) {
+        console.error("Error fetching tickets: ", error);
+      }
     };
 
-    const handleHelpPress = () => {
-        navigation.navigate("HelpScreen");
-    }
+    fetchTickets();
 
-    const handleLogout = () => {
-        auth
-            .signOut()
-            .then(() => {
-                navigation.replace("Login");
-            })
-            .catch((error) => alert(error.message));
-    };
+    return () => {};
+  }, []);
 
-    const [tickets, setTickets] = useState([]);
+  return (
+    <View className="flex-1 w-full">
+      <Text className="text-xs font-bold px-5 mt-5 ">Account</Text>
+      <View className="bg-white border border-slate-200 m-5 rounded-xl">
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-b border-slate-200"
+        >
+          <List.Item
+            title={auth.currentUser?.email}
+            description="Logout"
+            left={(props) => <List.Icon {...props} icon="account-outline" />}
+            right={(props) => <List.Icon {...props} icon="logout-variant" />}
+          />
+        </TouchableRipple>
 
-    useEffect(() => {
-        const fetchTickets = async () => {
-            const bookedTicketsRef = firebase.firestore().collection("bookedTickets");
-            try {
-                const querySnapshot = await bookedTicketsRef.get();
-                const ticketData = querySnapshot.docs.map((doc) => ({
-                    id: doc.id,
-                    ...doc.data(),
-                }));
-                setTickets(ticketData);
-            } catch (error) {
-                console.error("Error fetching tickets: ", error);
-            }
-        };
+        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)" className="0 ">
+          <List.Item
+            title="Settings"
+            description="Update profile, update password"
+            left={(props) => (
+              <List.Icon {...props} icon="account-settings-outline" />
+            )}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
+      </View>
 
-        fetchTickets();
+      <Text className="text-xs font-bold px-5">My bookings</Text>
+      <View className="bg-white border border-slate-200 m-5 rounded-xl">
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-b border-slate-200"
+        >
+          <List.Item
+            title="Tickets"
+            description="Unversed tickets"
+            left={(props) => (
+              <List.Icon {...props} icon="ticket-confirmation-outline" />
+            )}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
 
-        return () => { };
-    }, []);
+        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
+          <List.Item
+            title="Monthly Pass"
+            description="Monthly pass"
+            left={(props) => <List.Icon {...props} icon="ticket-account" />}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
+      </View>
 
-    return (
-        <View className="flex-1 w-full bg-white">
-            <View className="flex flex-row items-center justify-between p-5">
-                <View className={"w-1/5"}>
-                    <Avatar.Text size={64} label="PJ" />
-                </View>
+      <Text className="text-xs font-bold px-5">Support</Text>
+      <View className="bg-white border border-slate-200 m-5 rounded-xl">
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-b border-slate-200"
+        >
+          <List.Item
+            title="Help"
+            description="Payments, tickets, privacy policy"
+            left={(props) => (
+              <List.Icon {...props} icon="help-circle-outline" />
+            )}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
 
-                <View className="w-4/5 flex flex-row items-center justify-between">
-                    <View>
-                        <Text className="text-base">{auth.currentUser?.email}</Text>
-                    </View>
-                    <View>
-                        <TouchableOpacity onPress={handleLogout}>
-                            <MaterialCommunityIcons name="logout" size={24} color="black" />
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </View>
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className="border-b border-slate-200"
+        >
+          <List.Item
+            title="Support"
+            description="Contact us, write us"
+            left={(props) => <List.Icon {...props} icon="call-made" />}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
 
-            <Divider />
-
-            <View className={"m-5 text-base"}>
-                <List.Item
-                    title="Account"
-                    //                    titleStyle={{fontWeight:700}}
-                    description="Update profile, update password"
-                    onPress={handleAccountPress}
-                    left={(props) => <List.Icon {...props} icon="account-outline" />}
-                />
-
-                <List.Item
-                    title="Tickets"
-                    description="Reversed tickets, unreversed tickets"
-                    left={(props) => <List.Icon {...props} icon="ticket-outline" />}
-                />
-
-                <List.Item
-                    title="Pass"
-                    description="Monthly pass, renew, generate"
-                    left={(props) => <List.Icon {...props} icon="ticket-outline" />}
-                />
-
-                <List.Item
-                    title="Help"
-                    description="Help center, contact Us, privacy policy"
-                    onPress={handleHelpPress}
-                    left={(props) => <List.Icon {...props} icon="help-circle-outline" />}
-                />
-                <List.Item
-                    title="Call Support"
-                    description="Help center, contact Us, privacy policy"
-                    left={(props) => <List.Icon {...props} icon="call-made" />}
-                />
-                <List.Item
-                    title="Feedback"
-                    description="Help center, contact Us, privacy policy"
-                    left={(props) => <List.Icon {...props} icon="bug-outline" />}
-                />
-            </View>
-        </View>
-    );
+        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
+          <List.Item
+            title="Feedback"
+            description="Bus feedback, tickets feedback"
+            left={(props) => <List.Icon {...props} icon="bug-outline" />}
+            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+          />
+        </TouchableRipple>
+      </View>
+    </View>
+  );
 };
 
 export default ProfileScreen;
