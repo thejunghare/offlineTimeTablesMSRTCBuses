@@ -34,12 +34,12 @@ const StackNavigator = () => {
 
             <Stack.Screen name={ScreenNames.TicketOption} component={TicketOptionScreen}
                 options={{
-                    title: 'Ticket',
+                    title: 'Booking',
                 }}
             />
             <Stack.Screen name={ScreenNames.UnReservedTicket} component={UnReservedTicketScreen}
                 options={{
-                    title: 'Un-Reserved Ticket',
+                    title: 'Unreserved tickets',
                 }}
             />
             {/* <Stack.Screen

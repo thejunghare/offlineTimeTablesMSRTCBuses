@@ -8,14 +8,12 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import { Card, Icon } from "react-native-elements";
 import { Button, ActivityIndicator } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import moment from "moment";
 import { useNavigation } from "@react-navigation/native";
-import DropDownPicker from "react-native-dropdown-picker";
 
 const SearchBus = () => {
   const navigation = useNavigation();
