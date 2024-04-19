@@ -16,7 +16,7 @@ import SearchBus from "./components/SearchBus";
 import SearchStack from "./components/SearchStack";
 import LoginStack from "./components/LoginStack";
 import TicketStack from "./components/TicketStack";
-import SettingScreen from "./components/Settings";
+import SettingsStack from "./components/SettingsStack";
 
 const Feed = () => {
   return (
@@ -45,7 +45,7 @@ const Ticket = () => {
 const Settings = () => {
   return (
     <View style={{ flex: 1 }}>
-      <Settings />
+      <SettingsStack />
     </View>
   );
 };
@@ -64,7 +64,7 @@ const MyTabs = ({ route }) => {
           fontWeight: 900,
           fontSize: 11,
           padding: 10,
-          letterSpacing: 0.5
+          letterSpacing: 0.5,
         },
         tabBarStyle: {
           height: 80,
@@ -125,8 +125,9 @@ const MyTabs = ({ route }) => {
       />
       <Tab.Screen
         name="Settings"
-        component={SettingScreen}
+        component={Settings}
         options={{
+          headerShown: false,
           headerStyle: {
             backgroundColor: "white",
             shadowColor: "#000",
