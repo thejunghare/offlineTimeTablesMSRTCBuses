@@ -215,7 +215,7 @@ const SearchBus = () => {
               <TouchableOpacity key={index} onPress={() => handleBusPress(bus)}>
                 <View
                   key={index}
-                  className="bg-white shadow-lg rounded-lg w-full m-auto flex flex-col items-center mb-4"
+                  className="bg-white border border-slate-200 rounded-xl flex flex-col items-center m-3"
                 >
                   <View className="w-full flex flex-row items-center justify-between px-3 pt-3">
                     <Text className="font-extrabold text-base text-center">
@@ -288,7 +288,7 @@ const SearchBus = () => {
     <View className="flex-1 w-full">
       <Text className="text-xs font-bold px-5 mt-5 ">Search buses</Text>
 
-      <View className="m-5 bg-white border border-slate-200 rounded-xl mb-5 grid grid-cols-1 divide-y divide-slate-200 divide-solid">
+      <View className="m-5 bg-white border border-slate-200 rounded-xl grid grid-cols-1 divide-y divide-slate-200 divide-solid">
         {/* first picker */}
         <View className="w-full px-2 flex flex-row items-center justify-between">
           <View className="w-1/12">
