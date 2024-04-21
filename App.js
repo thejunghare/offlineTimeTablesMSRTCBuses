@@ -6,6 +6,7 @@ import {
   getFocusedRouteNameFromRoute,
 } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import * as Location from "expo-location";
 
 // icons imports
 import { Ionicons } from "@expo/vector-icons";
