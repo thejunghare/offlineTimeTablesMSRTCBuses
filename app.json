@@ -41,6 +41,12 @@
         {
           "fonts": ["./assets/fonts/Inter-Regular.ttf"]
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
       ]
     ]
   }
