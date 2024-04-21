@@ -6,9 +6,9 @@ import { Switch } from "react-native-switch";
 
 const SettingOptionsScreen = () => {
   const [isDarkThemeSwitchOn, setIsDarkThemeSwitchOn] = React.useState(false);
-  const [isLightThemeSwitchOn, setIsLightThemeSwitchOn] = React.useState(false);
+  const [isLightThemeSwitchOn, setIsLightThemeSwitchOn] = React.useState(true);
   const [isSystemThemeSwitchOn, setIsSystemThemeSwitchOn] =
-    React.useState(true);
+    React.useState(false);
 
   const onToggleDarkThemeSwitch = () => {
     setIsDarkThemeSwitchOn(true);
@@ -77,7 +77,7 @@ const SettingOptionsScreen = () => {
                 onValueChange={onToggleSystemThemeSwitch}
                 backgroundActive={"#C51E3A"}
                 circleSize={25}
-                disabled={false}
+                disabled={true}
                 activeText={""}
                 inActiveText={""}
               />
@@ -100,7 +100,7 @@ const SettingOptionsScreen = () => {
                 onValueChange={onToggleDarkThemeSwitch}
                 backgroundActive={"#C51E3A"}
                 circleSize={25}
-                disabled={false}
+                disabled={true}
                 activeText={""}
                 inActiveText={""}
               />
