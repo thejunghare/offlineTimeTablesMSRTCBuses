@@ -2,9 +2,32 @@ import * as React from "react";
 import { View } from "react-native";
 import { Text, List, TouchableRipple, RadioButton } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import { Switch } from "react-native-switch";
 
 const SettingOptionsScreen = () => {
-  const [checked, setChecked] = React.useState("first");
+  const [isDarkThemeSwitchOn, setIsDarkThemeSwitchOn] = React.useState(false);
+  const [isLightThemeSwitchOn, setIsLightThemeSwitchOn] = React.useState(false);
+  const [isSystemThemeSwitchOn, setIsSystemThemeSwitchOn] =
+    React.useState(true);
+
+  const onToggleDarkThemeSwitch = () => {
+    setIsDarkThemeSwitchOn(true);
+    setIsLightThemeSwitchOn(false);
+    setIsSystemThemeSwitchOn(false);
+  };
+
+  const onToggleLightThemeSwitch = () => {
+    setIsDarkThemeSwitchOn(false);
+    setIsLightThemeSwitchOn(true);
+    setIsSystemThemeSwitchOn(false);
+  };
+
+  const onToggleSystemThemeSwitch = () => {
+    setIsDarkThemeSwitchOn(false);
+    setIsLightThemeSwitchOn(false);
+    setIsSystemThemeSwitchOn(true);
+  };
+
   const navigation = useNavigation();
 
   const handleDevicePermissionPress = () => {
@@ -32,7 +55,7 @@ const SettingOptionsScreen = () => {
             title="Device Permission"
             description="Notifications, location"
             left={(props) => <List.Icon {...props} icon="cellphone-lock" />}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
       </View>
@@ -48,10 +71,15 @@ const SettingOptionsScreen = () => {
             description="Follow system theme"
             left={(props) => <List.Icon {...props} icon="theme-light-dark" />}
             right={(props) => (
-              <RadioButton
-                value="first"
-                status={checked === "first" ? "checked" : "unchecked"}
-                onPress={() => setChecked("first")}
+              <Switch
+                className="border pt-5"
+                value={isSystemThemeSwitchOn}
+                onValueChange={onToggleSystemThemeSwitch}
+                backgroundActive={"#C51E3A"}
+                circleSize={25}
+                disabled={false}
+                activeText={""}
+                inActiveText={""}
               />
             )}
           />
@@ -66,10 +94,15 @@ const SettingOptionsScreen = () => {
             description="Iconic dark theme"
             left={(props) => <List.Icon {...props} icon="moon-new" />}
             right={(props) => (
-              <RadioButton
-                value="first"
-                status={checked === "first" ? "checked" : "unchecked"}
-                onPress={() => setChecked("first")}
+              <Switch
+                className="border pt-5"
+                value={isDarkThemeSwitchOn}
+                onValueChange={onToggleDarkThemeSwitch}
+                backgroundActive={"#C51E3A"}
+                circleSize={25}
+                disabled={false}
+                activeText={""}
+                inActiveText={""}
               />
             )}
           />
@@ -81,10 +114,15 @@ const SettingOptionsScreen = () => {
             description="Sunny light theme"
             left={(props) => <List.Icon {...props} icon="weather-sunny" />}
             right={(props) => (
-              <RadioButton
-                value="first"
-                status={checked === "first" ? "checked" : "unchecked"}
-                onPress={() => setChecked("first")}
+              <Switch
+                className="border pt-5"
+                value={isLightThemeSwitchOn}
+                onValueChange={onToggleLightThemeSwitch}
+                backgroundActive={"#C51E3A"}
+                circleSize={25}
+                disabled={false}
+                activeText={""}
+                inActiveText={""}
               />
             )}
           />
@@ -104,7 +142,7 @@ const SettingOptionsScreen = () => {
             left={(props) => (
               <List.Icon {...props} icon="application-braces-outline" />
             )}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
 
@@ -118,7 +156,7 @@ const SettingOptionsScreen = () => {
             left={(props) => (
               <List.Icon {...props} icon="account-group-outline" />
             )}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
       </View>

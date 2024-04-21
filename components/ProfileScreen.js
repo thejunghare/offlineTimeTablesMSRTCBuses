@@ -79,7 +79,7 @@ const ProfileScreen = () => {
             left={(props) => (
               <List.Icon {...props} icon="account-settings-outline" />
             )}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
       </View>
@@ -96,7 +96,7 @@ const ProfileScreen = () => {
             left={(props) => (
               <List.Icon {...props} icon="ticket-confirmation-outline" />
             )}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
 
@@ -105,7 +105,7 @@ const ProfileScreen = () => {
             title="Monthly Pass"
             description="Monthly pass"
             left={(props) => <List.Icon {...props} icon="ticket-account" />}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
       </View>
@@ -122,7 +122,7 @@ const ProfileScreen = () => {
             left={(props) => (
               <List.Icon {...props} icon="help-circle-outline" />
             )}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
 
@@ -134,7 +134,7 @@ const ProfileScreen = () => {
             title="Support"
             description="Contact us, write us"
             left={(props) => <List.Icon {...props} icon="call-made" />}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
 
@@ -143,7 +143,7 @@ const ProfileScreen = () => {
             title="Feedback"
             description="Bus feedback, tickets feedback"
             left={(props) => <List.Icon {...props} icon="bug-outline" />}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
       </View>

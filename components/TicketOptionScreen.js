@@ -31,7 +31,7 @@ const TicketOptionScreen = () => {
             title="Unreserved ticket"
             description="Quick book, paper less travel"
             left={(props) => <List.Icon {...props} icon="ticket-outline" />}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
       </View>
@@ -46,7 +46,7 @@ const TicketOptionScreen = () => {
             title="Monthly pass"
             description="Get new monthly pass"
             left={(props) => <List.Icon {...props} icon="ticket-account" />}
-            right={(props) => <List.Icon {...props} icon="arrow-right" />}
+            right={(props) => <List.Icon {...props} icon="chevron-right" />}
           />
         </TouchableRipple>
       </View>
