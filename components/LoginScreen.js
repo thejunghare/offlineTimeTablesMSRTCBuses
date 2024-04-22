@@ -113,7 +113,7 @@ const LoginScreen = () => {
           onPress={handleLogin}
           className=" rounded w-11/12 p-2 text-base lowercase bg-ezgo-red"
           dark="true"
-          textColor="white"
+          color="white"
           uppercase="false"
         >
           Login

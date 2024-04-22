@@ -1,8 +1,9 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { View } from "react-native";
-import { Text, List, TouchableRipple, RadioButton } from "react-native-paper";
+import { Text, List, TouchableRipple, Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { Switch } from "react-native-switch";
+import { firebase, auth } from "../firebase";
 
 const SettingOptionsScreen = () => {
   const [isDarkThemeSwitchOn, setIsDarkThemeSwitchOn] = React.useState(false);
@@ -41,6 +42,16 @@ const SettingOptionsScreen = () => {
   const handleMeetTheTeamPress = () => {
     navigation.navigate("MeetTheTeamScreen");
   };
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const subscriber = firebase.auth().onAuthStateChanged((user) => {
+      setUser(user);
+    });
+
+    return subscriber;
+  }, []);
 
   return (
     <View className="flex-1 w-full bg-gray-50">
@@ -161,15 +172,46 @@ const SettingOptionsScreen = () => {
         </TouchableRipple>
       </View>
 
-      <Text className="text-xs font-bold px-5 mt-5 ">Account</Text>
-      <View className="bg-white border border-slate-200 m-5 rounded-xl">
-        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)" className="0 ">
-          <List.Item
-            title="Delete account"
-            description="Delete account"
-            left={(props) => <List.Icon {...props} icon="delete-outline" />}
-          />
-        </TouchableRipple>
+      <View>
+        {user ? (
+          <View className="bg-white border border-slate-200 m-5 rounded-xl">
+            <TouchableRipple
+              rippleColor="rgba(0, 0, 0, .32)"
+
+
+            >
+              <List.Item
+                title="Delete account"
+                className="p-2"
+                left={(props) => <List.Icon {...props} icon="delete-outline" />}
+                right={(props) => (
+                  <Text className="p-2 font-bold rounded-xl bg-ezgo-red text-white">Delete </Text>
+                )}
+              />
+            </TouchableRipple>
+          </View>
+        ) : (
+          <View>
+            <Text className="text-xs font-bold px-5 mt-5 ">Account</Text>
+            <View className="bg-white border border-slate-200 m-5 rounded-xl">
+              <TouchableRipple
+                rippleColor="rgba(0, 0, 0, .32)"
+
+              >
+                <List.Item
+                  title="Delete account"
+                  className="p-2.5"
+                 /*  left={(props) => (
+                    <List.Icon {...props} icon="account-outline" />
+                  )} */
+                  right={(props) => (
+                    <Text className="p-2 font-bold rounded-xl bg-ezgo-red text-white"> Login & delete account</Text>
+                  )}
+                />
+              </TouchableRipple>
+            </View>
+          </View>
+        )}
       </View>
     </View>
   );

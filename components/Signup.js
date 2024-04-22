@@ -62,7 +62,7 @@ const SignupScreen = () => {
                 onPress={handleSignup}
                 className=" rounded w-11/12 p-2 text-base lowercase bg-ezgo-red mb-5"
                 dark="true"
-                textColor="white"
+                color="white"
                 uppercase="false"
             >
                 Register
