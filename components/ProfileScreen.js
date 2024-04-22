@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View } from "react-native";
 import { firebase, auth } from "../firebase";
 import { useNavigation } from "@react-navigation/native";
-import {
-  Avatar,
-  Divider,
-  List,
-  TouchableRipple,
-  RadioButton,
-} from "react-native-paper";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { List, TouchableRipple } from "react-native-paper";
 
 const ProfileScreen = () => {
   const navigation = useNavigation();
-
-  const [checked, setChecked] = React.useState("first");
 
   const handleAccountPress = () => {
     navigation.navigate("AccountScreen");
@@ -22,6 +13,14 @@ const ProfileScreen = () => {
 
   const handleHelpPress = () => {
     navigation.navigate("HelpScreen");
+  };
+
+  const handleSupportPress = () => {
+    navigation.navigate("CallSupportScreen");
+  };
+
+  const handleFeedbackPress = () => {
+    navigation.navigate("FeedbackScreen");
   };
 
   const handleLogout = () => {
@@ -33,24 +32,87 @@ const ProfileScreen = () => {
       .catch((error) => alert(error.message));
   };
 
-  const [tickets, setTickets] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUserTicket, setCurrentUserTicket] = useState(null);
+  const [currentUserMonthlyPass, setCurrentUserMonthlyPass] = useState(null);
 
   useEffect(() => {
-    const fetchTickets = async () => {
-      const bookedTicketsRef = firebase.firestore().collection("bookedTickets");
-      try {
-        const querySnapshot = await bookedTicketsRef.get();
-        const ticketData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setTickets(ticketData);
-      } catch (error) {
-        console.error("Error fetching tickets: ", error);
+    const fetchUserDetails = async () => {
+      // Get the currently authenticated user
+      const user = firebase.auth().currentUser;
+      if (user) {
+        // Get the user document from Firestore using the user's UID
+        const userRef = firebase.firestore().collection("users").doc(user.uid);
+
+        try {
+          const docSnapshot = await userRef.get();
+          if (docSnapshot.exists) {
+            // Set the user data to state
+            setCurrentUser(docSnapshot.data());
+          } else {
+            console.error("User document does not exist");
+          }
+        } catch (error) {
+          console.error("Error fetching user: ", error);
+        }
+      } else {
+        console.error("No user is currently authenticated");
       }
     };
 
-    fetchTickets();
+    const fetchUserMonthlyPass = async () => {
+      try {
+        const currentUser = firebase.auth().currentUser;
+        const monthlyPassRef = firebase
+          .firestore()
+          .collection("users")
+          .doc(currentUser.uid)
+          .collection("monthlyPass");
+
+        const querySnapshot = await monthlyPassRef.get();
+
+        const userPasses = [];
+        querySnapshot.forEach((doc) => {
+          userPasses.push({
+            id: doc.id,
+            data: doc.data(),
+          });
+        });
+
+        setCurrentUserMonthlyPass(userPasses);
+      } catch (error) {
+        console.error("Error fetching user monthly passes: ", error);
+      }
+    };
+
+    const fetchUserTickets = async () => {
+      try {
+        const currentUser = firebase.auth().currentUser;
+        const unreversedTicketsRef = firebase
+          .firestore()
+          .collection("users")
+          .doc(currentUser.uid)
+          .collection("unreversedTickets");
+
+        const querySnapshot = await unreversedTicketsRef.get();
+
+        const userTickets = [];
+        querySnapshot.forEach((doc) => {
+          userTickets.push({
+            id: doc.id,
+            data: doc.data(),
+          });
+        });
+
+        setCurrentUserTicket(userTickets);
+      } catch (error) {
+        console.error("Error fetching user tickets: ", error);
+      }
+    };
+
+    fetchUserDetails();
+    fetchUserTickets();
+    fetchUserMonthlyPass();
 
     return () => {};
   }, []);
@@ -58,6 +120,37 @@ const ProfileScreen = () => {
   return (
     <View className="flex-1 w-full bg-gray-50">
       <Text className="text-xs font-bold px-5 mt-5 ">Account</Text>
+
+      {/* {currentUser && <Text>{currentUser.userPhoneNumber}</Text>} */}
+
+      {/* access unreversed tickets */}
+      {/*    {currentUserTicket !== null && currentUserTicket.length > 0 ? (
+        currentUserTicket.map((ticket, index) => (
+          <View key={index} style={{ marginBottom: 10 }}>
+            <Text>Ticket ID: {ticket.id}</Text>
+            <Text>Source: {ticket.data.ticketInfo.source}</Text>
+            <Text>Destination: {ticket.data.ticketInfo.destination}</Text>
+            <Text>Fare: ₹{ticket.data.ticketInfo.fare}</Text>
+          </View>
+        ))
+      ) : (
+        <Text>No tickets found.</Text>
+      )} */}
+
+      {/* access monthly passes */}
+      {/* {currentUserMonthlyPass !== null && currentUserMonthlyPass.length > 0 ? (
+        currentUserMonthlyPass.map((pass, index) => (
+          <View key={index} style={{ marginBottom: 10 }}>
+            <Text>Ticket ID: {pass.id}</Text>
+            <Text>Source: {pass.data.monthlyPassInfo.source}</Text>
+            <Text>Destination: {pass.data.monthlyPassInfo.destination}</Text>
+            <Text>Fare: ₹{pass.data.monthlyPassInfo.fare}</Text>
+          </View>
+        ))
+      ) : (
+        <Text>No pass found.</Text>
+      )} */}
+
       <View className="bg-white border border-slate-200 m-5 rounded-xl">
         <TouchableRipple
           rippleColor="rgba(0, 0, 0, .32)"
@@ -65,14 +158,19 @@ const ProfileScreen = () => {
           onPress={handleLogout}
         >
           <List.Item
-            title={auth.currentUser?.email}
-            description="Logout"
+            title={currentUser && currentUser.displayName}
+            description={auth.currentUser?.email}
             left={(props) => <List.Icon {...props} icon="account-outline" />}
             right={(props) => <List.Icon {...props} icon="logout-variant" />}
           />
         </TouchableRipple>
 
-        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)" className="0 ">
+        {/* update account details */}
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          className=""
+          onPress={handleAccountPress}
+        >
           <List.Item
             title="Settings"
             description="Update profile, update password"
@@ -115,6 +213,7 @@ const ProfileScreen = () => {
         <TouchableRipple
           rippleColor="rgba(0, 0, 0, .32)"
           className="border-b border-slate-200"
+          onPress={handleHelpPress}
         >
           <List.Item
             title="Help"
@@ -129,6 +228,7 @@ const ProfileScreen = () => {
         <TouchableRipple
           rippleColor="rgba(0, 0, 0, .32)"
           className="border-b border-slate-200"
+          onPress={handleSupportPress}
         >
           <List.Item
             title="Support"
@@ -138,7 +238,10 @@ const ProfileScreen = () => {
           />
         </TouchableRipple>
 
-        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
+        <TouchableRipple
+          rippleColor="rgba(0, 0, 0, .32)"
+          onPress={handleFeedbackPress}
+        >
           <List.Item
             title="Feedback"
             description="Bus feedback, tickets feedback"
