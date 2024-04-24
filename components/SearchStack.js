@@ -17,8 +17,10 @@ const StackNavigator = () => {
             screenOptions={{
                 headerMode: 'screen',
                 headerStyle: {
-                    backgroundColor: 'white',
+                    color: '#C51E3A',
+                    backgroundColor: '#ffffff'
                 },
+                headerTitle: "EZGO",
             }}
         >
 

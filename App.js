@@ -81,14 +81,14 @@ const MyTabs = ({ route }) => {
         component={Feed}
         options={{
           headerShown: false,
-          headerStyle: {
+         headerStyle: {
             backgroundColor: "white",
             shadowColor: "#000",
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
           },
-          tabBarLabel: "Home",
+          tabBarLabel: "EZGO",
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="home" size={26} color={color} />
           ),

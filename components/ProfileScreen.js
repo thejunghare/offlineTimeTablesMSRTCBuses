@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { ScrollView,Text, View } from "react-native";
 import { firebase, auth } from "../firebase";
 import { useNavigation } from "@react-navigation/native";
 import { List, TouchableRipple } from "react-native-paper";
@@ -118,7 +118,7 @@ const ProfileScreen = () => {
   }, []);
 
   return (
-    <View className="flex-1 w-full bg-gray-50">
+    <ScrollView className="flex-1 w-full bg-gray-50">
       <Text className="text-xs font-bold px-5 mt-5 ">Account</Text>
 
       {/* {currentUser && <Text>{currentUser.userPhoneNumber}</Text>} */}
@@ -250,7 +250,7 @@ const ProfileScreen = () => {
           />
         </TouchableRipple>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
