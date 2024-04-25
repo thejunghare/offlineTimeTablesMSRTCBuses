@@ -33,7 +33,7 @@ const AboutAppScreen = () => {
           )}
           right={(props) => (
             <Text className="py-2 font-bold font-base pr-2 text-ezgo-red">
-              v0.0.6.8
+              v0.0.9.0
             </Text>
           )}
         />
