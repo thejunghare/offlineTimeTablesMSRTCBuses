@@ -192,7 +192,7 @@ const ProfileScreen = () => {
                 <TouchableRipple
                     rippleColor="rgba(0, 0, 0, .32)"
                     className="border-b border-slate-200"
-onPress={handleMyTickets}
+                    onPress={handleMyTickets}
                 >
                     <List.Item
                         title="Tickets"
