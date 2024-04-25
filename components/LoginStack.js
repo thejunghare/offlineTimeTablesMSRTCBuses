@@ -5,6 +5,11 @@ import LoginScreen from './LoginScreen';
 import Signup from './Signup';
 import ProfileScreen from './ProfileScreen';
 import MyTicketsScreen from './MyTicketsScreen';
+import AccountScreen from './AccountScreen';
+import MyMonthlyPasses from './MyMonthlyPasses';
+import FeedbackScreen from './FeedbackScreen';
+import HelpScreen from './HelpScreen';
+import SupportScreen from './SupportScreen';
 
 const Stack = createStackNavigator();
 
@@ -12,7 +17,12 @@ const ScreenNames = {
     LOGIN: 'Login',
     SIGNUP: 'Signup',
     PROFILE: 'Profile',
-    TICKET: 'MyTicketsScreen'
+    TICKET: 'MyTicketsScreen',
+    ACCOUNT: 'AccountScreen',
+    MONTHLYPASS: 'MyMonthlyPasses',
+    FEEDBACK: 'FeedbackScreen',
+    SUPPORT: 'SupportScreen',
+    HELP: 'HelpScreen',
 };
 
 const StackNavigator = () => {
@@ -44,12 +54,47 @@ const StackNavigator = () => {
                 }}
             />
             <Stack.Screen
-                            name={ScreenNames.TICKET}
-                            component={MyTicketsScreen}
-                            options={{
-                                title: 'My tickets',
-                            }}
-                        />
+                name={ScreenNames.TICKET}
+                component={MyTicketsScreen}
+                options={{
+                    title: 'My tickets',
+                }}
+            />
+            <Stack.Screen
+                name={ScreenNames.ACCOUNT}
+                component={AccountScreen}
+                options={{
+                    title: 'My account',
+                }}
+            />
+            <Stack.Screen
+                name={ScreenNames.MONTHLYPASS}
+                component={MyMonthlyPasses}
+                options={{
+                    title: 'My pass',
+                }}
+            />
+            <Stack.Screen
+                name={ScreenNames.FEEDBACK}
+                component={FeedbackScreen}
+                options={{
+                    title: 'Feedback',
+                }}
+            />
+            <Stack.Screen
+                name={ScreenNames.SUPPORT}
+                component={SupportScreen}
+                options={{
+                    title: 'Support',
+                }}
+            />
+            <Stack.Screen
+                name={ScreenNames.HELP}
+                component={HelpScreen}
+                options={{
+                    title: 'Help',
+                }}
+            />
         </Stack.Navigator>
     );
 }

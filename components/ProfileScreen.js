@@ -15,12 +15,16 @@ const ProfileScreen = () => {
         navigation.navigate("MyTicketsScreen")
     }
 
+    const handleMyMonthlyPasses = () => {
+        navigation.navigate("MyMonthlyPasses")
+    }
+
     const handleHelpPress = () => {
         navigation.navigate("HelpScreen");
     };
 
     const handleSupportPress = () => {
-        navigation.navigate("CallSupportScreen");
+        navigation.navigate("SupportScreen");
     };
 
     const handleFeedbackPress = () => {
@@ -128,19 +132,6 @@ const ProfileScreen = () => {
 
             {/* {currentUser && <Text>{currentUser.userPhoneNumber}</Text>} */}
 
-            {/* access unreversed tickets */}
-            {/*    {currentUserTicket !== null && currentUserTicket.length > 0 ? (
-        currentUserTicket.map((ticket, index) => (
-          <View key={index} style={{ marginBottom: 10 }}>
-            <Text>Ticket ID: {ticket.id}</Text>
-            <Text>Source: {ticket.data.ticketInfo.source}</Text>
-            <Text>Destination: {ticket.data.ticketInfo.destination}</Text>
-            <Text>Fare: ₹{ticket.data.ticketInfo.fare}</Text>
-          </View>
-        ))
-      ) : (
-        <Text>No tickets found.</Text>
-      )} */}
 
             {/* access monthly passes */}
             {/* {currentUserMonthlyPass !== null && currentUserMonthlyPass.length > 0 ? (
@@ -204,7 +195,9 @@ const ProfileScreen = () => {
                     />
                 </TouchableRipple>
 
-                <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
+                <TouchableRipple rippleColor="rgba(0, 0, 0, .32)"
+                                 onPress={handleMyMonthlyPasses}
+                >
                     <List.Item
                         title="Monthly Pass"
                         description="Monthly pass"
