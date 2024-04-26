@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { auth } from '../firebase'
+import { firebase, auth } from '../firebase'
 import { Button, Avatar } from "react-native-paper";
 
 const SignupScreen = () => {
@@ -19,11 +19,23 @@ const SignupScreen = () => {
         auth
             .createUserWithEmailAndPassword(userEmail, userPassword)
             .then(userCredentials => {
-                const user = userCredentials.user
-                console.log(user.email);
+                const user = userCredentials.user;
+                const userId = user.uid;
+                const userData = {
+                    email: user.email
+                };
+
+                firebase.firestore().collection('users').doc(userId).set(userData)
+                    .then(() => {
+                        console.log("User data added to Firestore");
+                    })
+                    .catch(error => {
+                        console.error("Error adding user data to Firestore: ", error);
+                    });
             })
-            .catch(error => alert(error.message))
+            .catch(error => alert(error.message));
     };
+
 
     const handleLogin = () => {
         navigation.navigate("Login")
