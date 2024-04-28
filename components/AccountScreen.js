@@ -1,18 +1,25 @@
-import React, { useEffect, useState,useRef } from "react";
-import { ScrollView, View, RefreshControl,Modal, StyleSheet , Text, Pressable} from "react-native";
+import React, { useEffect, useState, useRef } from "react";
 import {
-  Button,
-  TextInput ,
-  List,
-} from "react-native-paper";
+  ScrollView,
+  View,
+  RefreshControl,
+  Modal,
+  StyleSheet,
+  Text,
+  Pressable,
+} from "react-native";
+import { Button, TextInput, List } from "react-native-paper";
 import { firebase, auth } from "../firebase";
-import ActionSheet from 'react-native-actions-sheet'
+import ActionSheet from "react-native-actions-sheet";
 
 const AccountScreen = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
   const [visible, setVisible] = useState(false);
-const actionSheetRef = useRef(null)
+  const actionSheetRef = useRef(null);
+
+  const [userPhoneNumber, setUserPhoneNumber] = useState("");
+  const [userName, setUserName] = useState("");
 
   const fetchUserDetails = async () => {
     const user = firebase.auth().currentUser;
@@ -34,9 +41,22 @@ const actionSheetRef = useRef(null)
     }
   };
 
+  const updateUserDetails = async () => {
+    const user = firebase.auth().currentUser;
+    try {
+      await firebase.firestore().collection("users").doc(user.uid).update({
+        userName: userName,
+        //phoneNumber: userPhoneNumber,
+      });
+      console.log("username updated");
+    } catch (error) {
+      console.error("username update failed:", error);
+    }
+  };
+
   useEffect(() => {
     fetchUserDetails();
-    return () => { };
+    return () => {};
   }, []);
 
   const handleRefresh = () => {
@@ -46,50 +66,54 @@ const actionSheetRef = useRef(null)
     });
   };
 
-  const handleSave = () => {
-    console.info('content save');
+  const handleSave = async () => {
+    console.info("content save");
+    await updateUserDetails();
+    console.log(`updated username is ${userName}`);
     hideModal();
-  }
+  };
 
-  const showModal = () =>   actionSheetRef.current?.show();;
+  const showModal = () => actionSheetRef.current?.show();
   const hideModal = () => actionSheetRef.current?.hide();
 
   return (
     <ScrollView
-    className="flex-1 w-full"
+      className="flex-1 w-full"
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
       }
     >
-
       {currentUser && currentUser.userName && (
-         <Pressable  onPress={showModal}>
-        <List.Item
-          title={currentUser.userName}
-          right={(props) => <List.Icon {...props} icon="pencil" />}
-        />
+        <Pressable onPress={showModal}>
+          <List.Item
+            title={currentUser.userName}
+            right={(props) => <List.Icon {...props} icon="pencil" />}
+          />
         </Pressable>
       )}
-
       {currentUser && currentUser.phoneNumber && (
-        <Pressable  onPress={showModal}>
-        <List.Item
-
-          title={currentUser.phoneNumber}
-          right={(props) => <List.Icon {...props} icon="pencil" />}
-        />
-      </Pressable>
-      )}
-
-      {currentUser && currentUser.email && (
-         <Pressable  onPress={showModal}>
-        <List.Item title={currentUser.email} />
+        <Pressable onPress={showModal}>
+          <List.Item
+            title={currentUser.phoneNumber}
+            right={(props) => <List.Icon {...props} icon="pencil" />}
+          />
         </Pressable>
       )}
-
+      {currentUser && currentUser.email && (
+        <Pressable onPress={showModal}>
+          <List.Item title={currentUser.email} />
+        </Pressable>
+      )}
       <ActionSheet ref={actionSheetRef}>
-        <TextInput/>
-        <Button icon='update' mode='elevated' onPress={handleSave}>Save</Button>
+        <TextInput
+          label="username"
+          value={userName}
+          onChangeText={(userName) => setUserName(userName)}
+        />
+        <Button icon="update" mode="elevated" onPress={handleSave}>
+
+          Save
+        </Button>
       </ActionSheet>
     </ScrollView>
   );
