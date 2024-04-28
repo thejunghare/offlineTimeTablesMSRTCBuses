@@ -78,11 +78,12 @@ const AccountScreen = () => {
 
   return (
     <ScrollView
-      className="flex-1 w-full"
+      className="flex-1 w-full p-2"
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
       }
     >
+    <View className={"bg-white rounded-t-xl border-b border-slate-200"}>
       {currentUser && currentUser.userName && (
         <Pressable onPress={showModal}>
           <List.Item
@@ -91,6 +92,8 @@ const AccountScreen = () => {
           />
         </Pressable>
       )}
+      </View>
+      <View className={"bg-white border-b border-slate-200"}>
       {currentUser && currentUser.phoneNumber && (
         <Pressable onPress={showModal}>
           <List.Item
@@ -99,21 +102,31 @@ const AccountScreen = () => {
           />
         </Pressable>
       )}
+      </View>
+      <View className={"bg-white rounded-b-xl"}>
       {currentUser && currentUser.email && (
         <Pressable onPress={showModal}>
           <List.Item title={currentUser.email} />
         </Pressable>
       )}
+
+      </View>
+
+
       <ActionSheet ref={actionSheetRef}>
+      <View className={""}>
+      <Text className={"text-center text-base font-bold my-3"}>Edit your details</Text>
         <TextInput
           label="username"
           value={userName}
           onChangeText={(userName) => setUserName(userName)}
+          right={<TextInput.Icon icon="account-outline" />}
         />
-        <Button icon="update" mode="elevated" onPress={handleSave}>
+        <Button icon="update" mode="elevated" className={"bg-ezgo-red rounded-0"} color="white" onPress={handleSave}>
 
           Save
         </Button>
+        </View>
       </ActionSheet>
     </ScrollView>
   );
