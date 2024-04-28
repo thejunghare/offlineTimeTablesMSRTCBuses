@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView,RefreshControl } from "react-native";
 import { Text, TouchableRipple } from "react-native-paper";
 import { firebase, auth } from "../firebase";
 import { useNavigation } from "@react-navigation/native";
@@ -7,12 +7,15 @@ import { useNavigation } from "@react-navigation/native";
 const MyTicketsScreen = () => {
   const navigation = useNavigation();
 
+  const [refreshing, setRefreshing] = useState(false);
+
   const [currentUser, setCurrentUser] = useState(null);
   const [currentUserTicket, setCurrentUserTicket] = useState(null);
 
   const options = { weekday: "short", month: "short", day: "numeric" };
 
-  useEffect(() => {
+
+
     const fetchUserDetails = async () => {
       // Get the currently authenticated user
       const user = firebase.auth().currentUser;
@@ -61,14 +64,27 @@ const MyTicketsScreen = () => {
       }
     };
 
-    fetchUserDetails();
-    fetchUserTickets();
 
-    return () => {};
+  useEffect(()=>{
+   fetchUserDetails();
+    fetchUserTickets();
+  return () => {};
   }, []);
 
+    const handleRefresh = () => {
+setRefreshing(true);
+fetchUserTickets().then(() => {
+setRefreshing(false);
+})
+
+  }
+
   return (
-    <ScrollView>
+    <ScrollView
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+      }
+      >
       {currentUserTicket !== null && currentUserTicket.length > 0 ? (
         currentUserTicket.map((ticket, index) => (
           <TouchableRipple
