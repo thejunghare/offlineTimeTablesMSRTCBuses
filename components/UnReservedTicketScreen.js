@@ -17,6 +17,7 @@ import {
   AlertNotificationRoot,
   Toast,
 } from "react-native-alert-notification";
+import { Dropdown } from "react-native-element-dropdown";
 
 const UnReservedTicketScreen = () => {
   const navigation = useNavigation();
@@ -275,30 +276,22 @@ const UnReservedTicketScreen = () => {
             </View>
 
             <View className="w-11/12">
-              <Picker
-                style={pickerStyle}
-                selectedValue={source}
-                dropdownIconColor="black"
-                mode="dropdown"
-                onValueChange={(itemValue, itemIndex) => {
-                  setSource(itemValue);
-                  setPickerStyle({
-                    ...pickerStyle,
-                    color: "black",
-                    fontWeight: 900,
-                  });
+              <Dropdown
+                onChange={(item) => {
+                  setSource(item.name);
                 }}
-              >
-                <Picker.Item label="From" value="" />
-                {data.map((item) => (
-                  <Picker.Item
-                    key={item.id}
-                    label={item.name}
-                    value={item.name}
-                    className="text-red-700"
-                  />
-                ))}
-              </Picker>
+                style={styles.dropdown}
+                placeholderStyle={styles.placeholderStyle}
+                selectedTextStyle={styles.selectedTextStyle}
+                data={data}
+                search
+                maxHeight={250}
+                labelField="name"
+                valueField="id"
+                searchPlaceholder="Search..."
+                placeholder={"From"}
+                value={source}
+              />
             </View>
           </View>
 
@@ -309,58 +302,48 @@ const UnReservedTicketScreen = () => {
             </View>
 
             <View className="w-11/12">
-              <Picker
-                style={pickerStyle}
-                dropdownIconColor="black"
-                mode="dropdown"
-                selectedValue={destination}
-                onValueChange={(itemValue, itemIndex) => {
-                  setDestination(itemValue);
-
-                  setPickerStyle({
-                    ...pickerStyle,
-                    color: "black",
-                    fontWeight: 900,
-                  });
+              <Dropdown
+                style={styles.dropdown}
+                data={data}
+                search
+                maxHeight={250}
+                labelField="name"
+                valueField="id"
+                placeholder={"To"}
+                searchPlaceholder="Search..."
+                value={destination}
+                onChange={(item) => {
+                  setDestination(item.name);
                 }}
-              >
-                <Picker.Item label="To" value="" />
-                {data.map((item) => (
-                  <Picker.Item
-                    key={item.id}
-                    label={item.name}
-                    value={item.name}
-                  />
-                ))}
-              </Picker>
+              />
             </View>
           </View>
 
           <View className="w-full px-2 flex flex-row items-center justify-between">
             <View className=" w-1/12">
-              <TouchableOpacity onPress={showDatepicker}>
-                <MaterialCommunityIcons
-                  name="calendar-clock"
-                  size={24}
-                  color="black"
-                />
-              </TouchableOpacity>
+              <MaterialCommunityIcons
+                name="calendar-clock"
+                size={24}
+                color="black"
+              />
             </View>
 
             <View className="w-11/12">
-              <Text className="p-5 text-black-50 font-bold text-base">
-                {" "}
-                {formattedDate}
-              </Text>
-              {show && (
-                <DateTimePicker
-                  testID="dateTimePicker"
-                  value={date}
-                  mode={mode}
-                  is24Hour={false}
-                  onChange={onChange}
-                />
-              )}
+              <TouchableOpacity onPress={showDatepicker}>
+                <Text className="p-5 text-black-50 font-bold text-base">
+                  {" "}
+                  {formattedDate}
+                </Text>
+                {show && (
+                  <DateTimePicker
+                    testID="dateTimePicker"
+                    value={date}
+                    mode={mode}
+                    is24Hour={false}
+                    onChange={onChange}
+                  />
+                )}
+              </TouchableOpacity>
             </View>
           </View>
 
@@ -502,5 +485,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
     color: "#C51E3A",
+  },
+  dropdown: {
+    height: 50,
+    marginLeft: 20,
   },
 });
