@@ -23,6 +23,8 @@ const LoginScreen = () => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   const passwordInputRef = createRef();
 
   useEffect(() => {
@@ -36,13 +38,15 @@ const LoginScreen = () => {
   }, []);
 
   const handleLogin = () => {
+    setLoading(true);
     if (userEmail === "") {
       setVisible(true);
+      return; // Add return statement to stop execution if email is empty
     }
 
     if (!userPassword) {
-      alert("PLease fill password");
-      return;
+      alert("Please fill password");
+      return; // Add return statement to stop execution if password is empty
     }
 
     auth
@@ -50,8 +54,12 @@ const LoginScreen = () => {
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log(`logged in with: `, user.email);
+        setLoading(false); // Move setLoading(false) here
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => {
+        alert(error.message);
+        setLoading(false); // And here
+      });
   };
 
   const handleSignup = () => {
@@ -116,7 +124,11 @@ const LoginScreen = () => {
           color="white"
           uppercase="false"
         >
-          Login
+          {loading ? (
+            <ActivityIndicator animating={true} color={"white"} />
+          ) : (
+            "Login"
+          )}
         </Button>
 
         <Portal>
