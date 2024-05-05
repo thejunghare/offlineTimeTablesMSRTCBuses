@@ -304,44 +304,22 @@ const SearchBus = () => {
           </View>
 
           <View className="w-11/12">
-            {/* <Picker
-                            style={pickerStyle}
-                            selectedValue={source}
-                            dropdownIconColor="black"
-                            mode="dropdown"
-                            onValueChange={(itemValue, itemIndex) => {
-                                setSource(itemValue);
-                                setPickerStyle({
-                                    ...pickerStyle,
-                                    color: "black",
-                                    fontWeight: 900,
-                                });
-                            }}
-                        >
-                            <Picker.Item label="From" value=""/>
-                            {data.map((item) => (
-                                <Picker.Item
-                                    key={item.id}
-                                    label={item.name}
-                                    value={item.name}
-                                    className="text-red-700"
-                                />
-                            ))}
-                        </Picker> */}
-
             <Dropdown
+              onChange={(item) => {
+                setSource(item.name);
+              }}
+
               style={styles.dropdown}
+              placeholderStyle={styles.placeholderStyle}
+              selectedTextStyle={styles.selectedTextStyle}
               data={data}
               search
               maxHeight={250}
               labelField="name"
               valueField="id"
-              placeholder={"From.."}
               searchPlaceholder="Search..."
+              placeholder={"From"}
               value={source}
-              onChange={(item) => {
-                setSource(item.name);
-              }}
             />
           </View>
         </View>
@@ -353,30 +331,6 @@ const SearchBus = () => {
           </View>
 
           <View className="w-11/12">
-            {/* <Picker
-              style={pickerStyle}
-              dropdownIconColor="black"
-              mode="dropdown"
-              selectedValue={destination}
-              onValueChange={(itemValue, itemIndex) => {
-                setDestination(itemValue);
-
-                setPickerStyle({
-                  ...pickerStyle,
-                  color: "black",
-                  fontWeight: 900,
-                });
-              }}
-            >
-              <Picker.Item label="To" value="" />
-              {data.map((item) => (
-                <Picker.Item
-                  key={item.id}
-                  label={item.name}
-                  value={item.name}
-                />
-              ))}
-            </Picker> */}
             <Dropdown
               style={styles.dropdown}
               data={data}
@@ -384,9 +338,10 @@ const SearchBus = () => {
               maxHeight={250}
               labelField="name"
               valueField="id"
-              placeholder={"To.."}
+              placeholder={"To"}
               searchPlaceholder="Search..."
               value={destination}
+              
               onChange={(item) => {
                 setDestination(item.name);
               }}
@@ -457,18 +412,9 @@ const SearchBus = () => {
 };
 
 const styles = StyleSheet.create({
-  routeButton: {
-    padding: 10,
-    marginVertical: 5,
-    borderRadius: 5,
-    backgroundColor: "#ddd",
-  },
   dropdown: {
     height: 50,
-    // borderColor: 'gray',
-    // borderWidth: 0.5,
-    // borderRadius: 8,
-    // paddingHorizontal: 8,
+    marginLeft: 20,
   },
 });
 
