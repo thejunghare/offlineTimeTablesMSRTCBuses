@@ -4,16 +4,16 @@
         "division_name": "satara",
         "wards": [
             {
-                "id":1,
+                "id": 1,
                 "ward_name": "ward-1",
                 "d2d_survey": [
                     {
-                        "id":1,
+                        "id": 1,
                         "Timestamp": "1\/14\/2023 10:48:35",
                         "email": "Ranjit",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 61,
                         "family_head_name": "Vasant kashiram naikade ",
                         "mobile_number": 9527692321,
@@ -46,11 +46,11 @@
                         "Owner ": "Owner"
                     },
                     {
-                        "id":2,
+                        "id": 2,
                         "Timestamp": "1\/14\/2023 10:49:12",
                         "email": "Abhishek",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
                         "society_name": "Chavan Wada",
                         "room_number": 61,
                         "family_head_name": "Mukta namdev navghane",
@@ -73,12 +73,12 @@
                         "Owner ": "Rented"
                     },
                     {
-                        "id":3,
+                        "id": 3,
                         "Timestamp": "1\/14\/2023 10:52:58",
                         "email": "Ranijit",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 62,
                         "family_head_name": "Pooja machindra wadekar ",
                         "mobile_number": 8625012005,
@@ -94,12 +94,12 @@
                         "member_three_where_is_your_poll": "वडगाव"
                     },
                     {
-                        "id":4,
+                        "id": 4,
                         "Timestamp": "1\/14\/2023 10:54:24",
                         "email": "sachin",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "chawan wada",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Chavan Wada",
                         "room_number": 31,
                         "family_head_name": "Shivaji himat patil",
                         "mobile_number": 9762778306,
@@ -157,12 +157,12 @@
                         "Owner ": "Owner"
                     },
                     {
-                        "id":5,
+                        "id": 5,
                         "Timestamp": "1\/14\/2023 10:57:15",
                         "email": "Ranjit ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 63,
                         "family_head_name": "Nayana chandraknt chavan ",
                         "mobile_number": 7840929476,
@@ -185,12 +185,12 @@
                         "member_four_mobile_number": 7840929476
                     },
                     {
-                        "id":6,
+                        "id": 6,
                         "Timestamp": "1\/14\/2023 11:01:56",
                         "email": "Raniit",
                         "ward_name": "प्रभाग 8",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 64,
                         "family_head_name": "Pramod Narayan deshmukh",
                         "mobile_number": 9665222045,
@@ -234,12 +234,12 @@
                         "member_four_caste": "Open "
                     },
                     {
-                        "id":7,
+                        "id": 7,
                         "Timestamp": "1\/14\/2023 11:04:57",
                         "email": "sachin",
                         "ward_name": "प्रभाग 9",
                         "division_name": "chavan Wada",
-                        "society_name": "chawan Wada",
+                        "society_name": "Chavan Wada",
                         "room_number": 32,
                         "family_head_name": "madhukar bajirao chavan",
                         "mobile_number": 9881677264,
@@ -297,12 +297,12 @@
                         "Owner ": "Owner"
                     },
                     {
-                        "id":8,
+                        "id": 8,
                         "Timestamp": "1\/14\/2023 11:07:13",
                         "email": "Raniit",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 66,
                         "family_head_name": "Sharad vittharo bhosale ",
                         "mobile_number": 7083474183,
@@ -332,11 +332,11 @@
                         "member_three_where_is_your_poll": "अन्य शहर"
                     },
                     {
-                        "id":9,
+                        "id": 9,
                         "Timestamp": "1\/14\/2023 11:08:17",
                         "email": "Pramod ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
                         "society_name": "Jivhala Bangala",
                         "room_number": 91,
                         "family_head_name": "Manik shamarav patil ",
@@ -398,12 +398,12 @@
                         "Owner ": "Owner"
                     },
                     {
-                        "id":10,
+                        "id": 10,
                         "Timestamp": "1\/14\/2023 11:11:20",
                         "email": "Sachin",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "chawan Wada",
-                        "society_name": "chawan Wada",
+                        "division_name": "Chavan Wada",
+                        "society_name": "Chavan Wada",
                         "room_number": 33,
                         "family_head_name": "Alima rajjat sheikh",
                         "mobile_number": 9028091128,
@@ -420,12 +420,12 @@
                         "Owner ": "Rented"
                     },
                     {
-                        "id":11,
+                        "id": 11,
                         "Timestamp": "1\/14\/2023 11:16:32",
                         "email": "Ranjit ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 67,
                         "family_head_name": "Bharat ramrao pingle ",
                         "mobile_number": 9763989587,
@@ -450,7 +450,7 @@
                         "member_three_where_is_your_poll": "वडगाव"
                     },
                     {
-                        "id":12,
+                        "id": 12,
                         "Timestamp": "1\/14\/2023 11:17:02",
                         "email": "Sachin",
                         "ward_name": "प्रभाग 9",
@@ -479,12 +479,12 @@
                         "Owner ": "Rented"
                     },
                     {
-                        "id":13,
+                        "id": 13,
                         "Timestamp": "1\/14\/2023 11:21:27",
                         "email": "Ranjit ghadge ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indarayni nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indarayni Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 67,
                         "family_head_name": "Sakshi dattatray gaikwad ",
                         "mobile_number": 9284355300,
@@ -502,7 +502,7 @@
                         "member_three_where_is_your_poll": "वडगाव"
                     },
                     {
-                        "id":14,
+                        "id": 14,
                         "Timestamp": "1\/14\/2023 11:23:21",
                         "email": "Abhishek",
                         "ward_name": "प्रभाग 9",
@@ -554,7 +554,7 @@
                         "Owner ": "Owner"
                     },
                     {
-                        "id":15,
+                        "id": 15,
                         "Timestamp": "1\/14\/2023 11:52:03",
                         "email": "Tawarejyoti336@gmail.com ",
                         "ward_name": "प्रभाग 9",
@@ -588,12 +588,12 @@
                         "member_three_where_is_your_poll": "वडगाव"
                     },
                     {
-                        "id":16,
+                        "id": 16,
                         "Timestamp": "1\/14\/2023 11:53:50",
                         "email": "piyasurve7@gmail.com",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 101,
                         "family_head_name": "Vijay Arjun chavan ",
                         "mobile_number": 9850128338,
@@ -647,7 +647,7 @@
                         "member_ ४ ": "होय"
                     },
                     {
-                        "id":17,
+                        "id": 17,
                         "Timestamp": "1\/14\/2023 11:57:54",
                         "email": "Tawarejyoti336@gmail.com ",
                         "ward_name": "प्रभाग 9",
@@ -673,7 +673,7 @@
                         "Owner ": "Rented"
                     },
                     {
-                        "id":18,
+                        "id": 18,
                         "Timestamp": "1\/14\/2023 12:11:06",
                         "email": "Tawarejyoti336@gmail.com ",
                         "ward_name": "प्रभाग 9",
@@ -701,7 +701,7 @@
                         "Owner ": "Rented"
                     },
                     {
-                        "id":19,
+                        "id": 19,
                         "Timestamp": "1\/14\/2023 12:15:59",
                         "email": "Tawarejyoti336@gmail.com ",
                         "ward_name": "प्रभाग 9",
@@ -729,12 +729,12 @@
                         "Owner ": "Rented"
                     },
                     {
-                        "id":20,
+                        "id": 20,
                         "Timestamp": "1\/14\/2023 12:18:03",
                         "email": "Ranjit ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 68,
                         "family_head_name": "Mahadev Namdev waghmare ",
                         "mobile_number": 9637790874,
@@ -756,7 +756,7 @@
                         "member_three_where_is_your_poll": "अन्य शहर"
                     },
                     {
-                        "id":21,
+                        "id": 21,
                         "Timestamp": "1\/14\/2023 12:24:30",
                         "email": "Tawarejyoti336@gmail.com ",
                         "ward_name": "प्रभाग 9",
@@ -783,12 +783,12 @@
                         "member_three_where_is_your_poll": "अन्य शहर"
                     },
                     {
-                        "id":22,
+                        "id": 22,
                         "Timestamp": "1\/14\/2023 12:26:05",
                         "email": "RANJIT GHADGE ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indarayni nagar ",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indarayni Nagar",
                         "room_number": 69,
                         "family_head_name": "Datta masu unavne ",
                         "mobile_number": 7385051390,
@@ -845,12 +845,12 @@
                         "member_six_education": 12
                     },
                     {
-                        "id":23,
+                        "id": 23,
                         "Timestamp": "1\/14\/2023 12:29:14",
                         "email": "piyasurve7@gmail.com",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 102,
                         "family_head_name": "Tarabai gulabrao kakare",
                         "mobile_number": 9579726230,
@@ -924,12 +924,12 @@
                         "member_ ६ ": "नाही"
                     },
                     {
-                        "id":24,
+                        "id": 24,
                         "Timestamp": "1\/14\/2023 12:30:10",
                         "email": "Ranjit",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 70,
                         "family_head_name": "Madhukar narayan parasakar ",
                         "mobile_number": 9049729277,
@@ -944,12 +944,12 @@
                         "member_three_where_is_your_poll": "वडगाव"
                     },
                     {
-                        "id":25,
+                        "id": 25,
                         "Timestamp": "1\/14\/2023 12:33:53",
                         "email": "Ranjit ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 70,
                         "family_head_name": "Anil rambbhu pathak ",
                         "mobile_number": 8080833414,
@@ -967,12 +967,12 @@
                         "member_three_where_is_your_poll": "वडगाव"
                     },
                     {
-                        "id":26,
+                        "id": 26,
                         "Timestamp": "1\/14\/2023 12:36:12",
                         "email": "Ranjit ghadge ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 71,
                         "family_head_name": "Suresh rambhau pathak ",
                         "mobile_number": 7822879687,
@@ -989,7 +989,7 @@
                         "Owner ": "Owner"
                     },
                     {
-                        "id":27,
+                        "id": 27,
                         "Timestamp": "1\/14\/2023 12:36:40",
                         "email": "Tawarejyoti336@gmail.com ",
                         "ward_name": "प्रभाग 9",
@@ -1024,12 +1024,12 @@
                         "Owner ": "Owner"
                     },
                     {
-                        "id":28,
+                        "id": 28,
                         "Timestamp": "1\/14\/2023 12:38:17",
                         "email": "RANJIT GHADGE ",
                         "ward_name": "प्रभाग 9",
-                        "division_name": "Indirayani Nagar",
-                        "society_name": "Indirayani Nagar",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 72,
                         "family_head_name": "Poonam suresh pathak ",
                         "mobile_number": 7822879687,
@@ -1052,12 +1052,12 @@
                         "Owner ": "Owner"
                     },
                     {
-                        "id":29,
+                        "id": 29,
                         "Timestamp": "1\/14\/2023 12:40:14",
                         "email": "Sachin",
                         "ward_name": "प्रभाग 9",
                         "division_name": "Chavan Wada",
-                        "society_name": "Indirayani Nagar",
+                        "society_name": "Indrayani Nagar",
                         "room_number": 34,
                         "family_head_name": "darshan haribhau patil",
                         "mobile_number": 9518979227,
