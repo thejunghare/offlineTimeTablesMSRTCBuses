@@ -2,10 +2,14 @@
     {
         "id": 1,
         "division_name": "Medha Nagarpanchayat",
+        "division_head_fname": "Shivendra Raje",
+        "division_head_lname": "Maharaj Bhosale",
         "wards": [
             {
                 "id": 1,
                 "ward_name": "ward-1",
+                "ward_head_fname": "Prasad",
+                "ward_head_lname": "Junghare",
                 "d2d_survey": [
                     {
                         "id": 1,
