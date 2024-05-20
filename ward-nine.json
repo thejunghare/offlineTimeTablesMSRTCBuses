@@ -2211,6 +2211,51 @@
                         "member_one_caste": "open"
                     }
                 ]
+            },{
+                "id": 3,
+                "ward_name": "ward-3",
+                "ward_head_fname": "Yash",
+                "ward_head_lname": "Patil",
+                "d2d_survey": [
+                    {
+                        "id": 1,
+                        "Timestamp": "1\/14\/2023 10:48:35",
+                        "email": "Ranjit",
+                        "ward_name": "ward-1",
+                        "division_name": "Indrayani Nagar",
+                        "society_name": "Indrayani Nagar",
+                        "room_number": 61,
+                        "family_head_name": "Vasant kashiram naikade ",
+                        "mobile_number": 9527692321,
+                        "date_of_birth": "18/5/1946",
+                        "age": 76,
+                        "native_place": "Wadagav ",
+                        "caste": "Open",
+                        "are_you_a_voter": "होय",
+                        "where_is_your_poll": "वडगाव",
+                        "": "नाही",
+                        "member_one_name": "Dhanshree vasant naikade",
+                        "member_one_mobile_number": 9527692321,
+                        "member_one_date_of_birth": "16\/8\/1978",
+                        "member_one_age": 65,
+                        "member_one_native_place": "Wadagv ",
+                        "member_one_education": 4,
+                        "member_one_caste": "Open ",
+                        "member_one_are_you_a_voter": "होय",
+                        "member_one_where_is_your_poll": "वडगाव",
+                        "member_two_name": "Rajshree vasant naikade ",
+                        "member_two_mobile_number": 9527692321,
+                        "member_two_date_of_birth": "16\/1\/1981",
+                        "member_two_age": 53,
+                        "member_two_native_place": "Wadagv",
+                        "member_two_education": 9,
+                        "member_two_caste": "Open ",
+                        "member_two_are_you_a_voter": "होय",
+                        "member_two_where_is_your_poll": "वडगाव",
+                        "member_three_where_is_your_poll": "अन्य शहर",
+                        "Owner ": "Owner"
+                    }
+                ]
             }
         ]
     },{
