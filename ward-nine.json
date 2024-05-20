@@ -26,10 +26,11 @@
                         "native_place": "Wadagav ",
                         "caste": "Open",
                         "are_you_a_voter": "होय",
-                        "where_is_your_poll": "वडगाव",
+                        "where_is_your_poll": "वडगाव"
                     }
                 ]
-            },{
+            },
+            {
                 "id": 2,
                 "ward_name": "ward-2",
                 "ward_head_fname": "Arjun",
@@ -45,7 +46,7 @@
                         "room_number": 61,
                         "family_head_name": "Vasant kashiram naikade ",
                         "mobile_number": 9527692321,
-                        "date_of_birth": "21/5/1946",
+                        "date_of_birth": "20/5/1946",
                         "age": 76,
                         "native_place": "Wadagav ",
                         "caste": "Open",
@@ -55,7 +56,8 @@
                 ]
             }
         ]
-    },{
+    },
+    {
         "id": 2,
         "division_name": "Satara Nagarpanchayat",
         "division_head_fname": "Sudhir",
@@ -77,7 +79,7 @@
                         "room_number": 61,
                         "family_head_name": "Vasant kashiram naikade ",
                         "mobile_number": 9527692321,
-                        "date_of_birth": "20/5/1946",
+                        "date_of_birth": "21/5/1946",
                         "age": 76,
                         "native_place": "Wadagav ",
                         "caste": "Open",
@@ -85,7 +87,8 @@
                         "where_is_your_poll": "वडगाव"
                     }
                 ]
-            },{
+            },
+            {
                 "id": 2,
                 "ward_name": "ward-2",
                 "ward_head_fname": "Sham",
