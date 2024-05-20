@@ -2214,10 +2214,10 @@
             }
         ]
     },{
-        "id": 1,
+        "id": 2,
         "division_name": "Satara Nagarpanchayat",
-        "division_head_fname": "Shivendra Raje",
-        "division_head_lname": "Maharaj Bhosale",
+        "division_head_fname": "Sudhir",
+        "division_head_lname": "Lohat",
         "wards": [
             {
                 "id": 1,
