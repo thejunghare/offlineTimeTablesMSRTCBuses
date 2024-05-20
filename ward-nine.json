@@ -25,7 +25,7 @@
                         "age": 76,
                         "native_place": "Wadagav ",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Owner",
                         "members": [
@@ -62,7 +62,7 @@
                         "age": 30,
                         "native_place": "वडगाव",
                         "education": 7,
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Rented",
                         "members": [
@@ -101,7 +101,7 @@
                         "native_place": "Maval ",
                         "education": 12,
                         "caste": "Open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -138,7 +138,7 @@
                         "native_place": "vadgoan",
                         "education": "2th",
                         "caste": "open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -177,7 +177,7 @@
                         "native_place": "Wadgav ",
                         "education": "bE",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -215,7 +215,7 @@
                         "native_place": "Wadagav",
                         "education": 14,
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -252,7 +252,7 @@
                         "native_place": "vadgoan",
                         "education": "9th",
                         "caste": "open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -290,7 +290,7 @@
                         "native_place": "Usamanabad ",
                         "education": 12,
                         "caste": "Open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -327,7 +327,7 @@
                         "native_place": "Vadagav ",
                         "education": 5,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -366,7 +366,7 @@
                         "native_place": "vadgoan",
                         "education": "5th",
                         "caste": "mislim",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "": "नाही",
                         "member_one_name": "s",
@@ -386,7 +386,7 @@
                         "age": 67,
                         "native_place": "Wadagav",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -424,7 +424,7 @@
                         "native_place": "vadgoan",
                         "education": 1,
                         "caste": "open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -463,7 +463,7 @@
                         "native_place": "Solapaur ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -500,7 +500,7 @@
                         "age": 59,
                         "native_place": "वडगाव",
                         "education": "DME",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -539,7 +539,7 @@
                         "native_place": "Wadgaon",
                         "education": "7o",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -577,7 +577,7 @@
                         "native_place": "Vadgaon ",
                         "education": "10th",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -614,7 +614,7 @@
                         "native_place": "Takave khurd",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -653,7 +653,7 @@
                         "native_place": "Khed",
                         "education": 12,
                         "caste": "Mahadev koli",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -692,7 +692,7 @@
                         "native_place": "Madala",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -729,7 +729,7 @@
                         "age": 65,
                         "native_place": "Wadagav ",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -767,7 +767,7 @@
                         "native_place": "Hirpur",
                         "education": "Degree ",
                         "caste": "Obc",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -804,7 +804,7 @@
                         "native_place": "Wadagav ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -842,7 +842,7 @@
                         "native_place": "Vadgaon ",
                         "education": "2nd",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -879,7 +879,7 @@
                         "native_place": "Wadagav",
                         "education": 12,
                         "caste": "Maratha",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -915,7 +915,7 @@
                         "age": 32,
                         "native_place": "Wadgav ",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -952,7 +952,7 @@
                         "native_place": "Wadgav ",
                         "education": 13,
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -991,7 +991,7 @@
                         "native_place": "Wadgaon",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1029,7 +1029,7 @@
                         "native_place": "Lonwala ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -1068,7 +1068,7 @@
                         "native_place": "vadgoan",
                         "education": "12th",
                         "caste": "open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1113,7 +1113,7 @@
                         "age": 76,
                         "native_place": "Wadagav ",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Owner",
                         "members": [
@@ -1150,7 +1150,7 @@
                         "age": 30,
                         "native_place": "वडगाव",
                         "education": 7,
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Rented",
                         "members": [
@@ -1189,7 +1189,7 @@
                         "native_place": "Maval ",
                         "education": 12,
                         "caste": "Open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1226,7 +1226,7 @@
                         "native_place": "vadgoan",
                         "education": "2th",
                         "caste": "open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Owner",
                         "members": [
@@ -1265,7 +1265,7 @@
                         "native_place": "Wadgav ",
                         "education": "bE",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1303,7 +1303,7 @@
                         "native_place": "Wadagav",
                         "education": 14,
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1340,7 +1340,7 @@
                         "native_place": "vadgoan",
                         "education": "9th",
                         "caste": "open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1378,7 +1378,7 @@
                         "native_place": "Usamanabad ",
                         "education": 12,
                         "caste": "Open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -1415,7 +1415,7 @@
                         "native_place": "Vadagav ",
                         "education": 5,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Owner",
                         "members": [
@@ -1454,7 +1454,7 @@
                         "native_place": "vadgoan",
                         "education": "5th",
                         "caste": "mislim",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "": "नाही",
                         "member_one_name": "s",
@@ -1494,7 +1494,7 @@
                         "age": 67,
                         "native_place": "Wadagav",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1532,7 +1532,7 @@
                         "native_place": "vadgoan",
                         "education": 1,
                         "caste": "open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "Owner ": "Rented",
                         "members": [
@@ -1571,7 +1571,7 @@
                         "native_place": "Solapaur ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -1608,7 +1608,7 @@
                         "age": 59,
                         "native_place": "वडगाव",
                         "education": "DME",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Owner",
                         "members": [
@@ -1647,7 +1647,7 @@
                         "native_place": "Wadgaon",
                         "education": "7o",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1685,7 +1685,7 @@
                         "native_place": "Vadgaon ",
                         "education": "10th",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1722,13 +1722,13 @@
                         "native_place": "Takave khurd",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "": "नाही",
                         "member_one_name": "Jayashree",
                         "member_one_age": 42,
                         "member_one_education": 12,
-                        "member_one_are_you_a_voter": "होय",
+                        "member_one_voter": "Yes",
                         "member_one_where_is_your_poll": "अन्य शहर",
                         "member_ १ ": "नाही",
                         "member_three_where_is_your_poll": "अन्य शहर",
@@ -1769,13 +1769,13 @@
                         "native_place": "Khed",
                         "education": 12,
                         "caste": "Mahadev koli",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "": "नाही",
                         "member_one_name": "Swati",
                         "member_one_date_of_birth": "10\/11\/87",
                         "member_one_age": 37,
-                        "member_one_are_you_a_voter": "होय",
+                        "member_one_voter": "Yes",
                         "member_one_where_is_your_poll": "अन्य शहर",
                         "member_ १ ": "नाही",
                         "member_two_education": 13,
@@ -1817,7 +1817,7 @@
                         "native_place": "Madala",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Rented",
                         "members": [
@@ -1854,7 +1854,7 @@
                         "age": 65,
                         "native_place": "Wadagav ",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1892,7 +1892,7 @@
                         "native_place": "Hirpur",
                         "education": "Degree ",
                         "caste": "Obc",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -1929,7 +1929,7 @@
                         "native_place": "Wadagav ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -1967,7 +1967,7 @@
                         "native_place": "Vadgaon ",
                         "education": "2nd",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2004,7 +2004,7 @@
                         "native_place": "Wadagav",
                         "education": 12,
                         "caste": "Maratha",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2040,7 +2040,7 @@
                         "age": 32,
                         "native_place": "Wadgav ",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2077,7 +2077,7 @@
                         "native_place": "Wadgav ",
                         "education": 13,
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2115,7 +2115,7 @@
                         "native_place": "Wadgaon",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Owner",
                         "members": [
@@ -2153,7 +2153,7 @@
                         "native_place": "Lonwala ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "Owner ": "Owner",
                         "members": [
@@ -2192,7 +2192,7 @@
                         "native_place": "vadgoan",
                         "education": "12th",
                         "caste": "open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2229,7 +2229,7 @@
                         "native_place": "Lonwala ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "Owner ": "Owner",
                         "members": [
@@ -2268,7 +2268,7 @@
                         "native_place": "vadgoan",
                         "education": "12th",
                         "caste": "open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2313,7 +2313,7 @@
                         "age": 76,
                         "native_place": "Wadagav ",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "Owner ": "Owner",
                         "members": [
@@ -2367,7 +2367,7 @@
                         "age": 76,
                         "native_place": "Wadagav ",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2404,7 +2404,7 @@
                         "age": 30,
                         "native_place": "वडगाव",
                         "education": 7,
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2443,7 +2443,7 @@
                         "native_place": "Maval ",
                         "education": 12,
                         "caste": "Open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2480,7 +2480,7 @@
                         "native_place": "vadgoan",
                         "education": "2th",
                         "caste": "open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2519,7 +2519,7 @@
                         "native_place": "Wadgav ",
                         "education": "bE",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2557,7 +2557,7 @@
                         "native_place": "Wadagav",
                         "education": 14,
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2594,7 +2594,7 @@
                         "native_place": "vadgoan",
                         "education": "9th",
                         "caste": "open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2632,7 +2632,7 @@
                         "native_place": "Usamanabad ",
                         "education": 12,
                         "caste": "Open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -2669,7 +2669,7 @@
                         "native_place": "Vadagav ",
                         "education": 5,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2708,7 +2708,7 @@
                         "native_place": "vadgoan",
                         "education": "5th",
                         "caste": "mislim",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "": "नाही",
                         "member_one_name": "s",
@@ -2728,7 +2728,7 @@
                         "age": 67,
                         "native_place": "Wadagav",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2766,7 +2766,7 @@
                         "native_place": "vadgoan",
                         "education": 1,
                         "caste": "open",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -2805,7 +2805,7 @@
                         "native_place": "Solapaur ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "नाही",
+                        "voter": "नाही",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -2842,7 +2842,7 @@
                         "age": 59,
                         "native_place": "वडगाव",
                         "education": "DME",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2881,7 +2881,7 @@
                         "native_place": "Wadgaon",
                         "education": "7o",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2919,7 +2919,7 @@
                         "native_place": "Vadgaon ",
                         "education": "10th",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -2956,7 +2956,7 @@
                         "native_place": "Takave khurd",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "members": [
                             {
                                 "id": 1,
@@ -2994,7 +2994,7 @@
                         "native_place": "Khed",
                         "education": 12,
                         "caste": "Mahadev koli",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -3033,7 +3033,7 @@
                         "native_place": "Madala",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -3070,7 +3070,7 @@
                         "age": 65,
                         "native_place": "Wadagav ",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -3108,7 +3108,7 @@
                         "native_place": "Hirpur",
                         "education": "Degree ",
                         "caste": "Obc",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -3145,7 +3145,7 @@
                         "native_place": "Wadagav ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -3183,7 +3183,7 @@
                         "native_place": "Vadgaon ",
                         "education": "2nd",
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -3220,7 +3220,7 @@
                         "native_place": "Wadagav",
                         "education": 12,
                         "caste": "Maratha",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -3256,7 +3256,7 @@
                         "age": 32,
                         "native_place": "Wadgav ",
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -3293,7 +3293,7 @@
                         "native_place": "Wadgav ",
                         "education": 13,
                         "caste": "Open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -3332,7 +3332,7 @@
                         "native_place": "Wadgaon",
                         "education": 10,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
@@ -3370,7 +3370,7 @@
                         "native_place": "Lonwala ",
                         "education": 12,
                         "caste": "Open ",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "अन्य शहर",
                         "members": [
                             {
@@ -3409,7 +3409,7 @@
                         "native_place": "vadgoan",
                         "education": "12th",
                         "caste": "open",
-                        "are_you_a_voter": "होय",
+                        "voter": "Yes",
                         "where_is_your_poll": "वडगाव",
                         "members": [
                             {
