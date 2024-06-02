@@ -1,4 +1,4 @@
-## Upcoming features | Open for contribution
+## Upcoming features 
 
 - Access search result offline
 - Implement path search result
@@ -51,49 +51,6 @@ whenever an internet connection is available.
 - **User Authentication**: The application supports user authentication using Firebase Authentication for personalized
   experiences and additional features.
 - **Accessibility**: The user interface is designed to be user-friendly and accessible to all users.
-
-## Installation
-
-To run the MSRTC Bus Timetable App locally, follow these steps:
-
-1. Clone the repository to your local machine using the following command:
-
-```
-git clone https://github.com/thejunghare/msrtc-bus-timetable.git
-```
-
-2. Install the necessary dependencies using a package manager such as Yarn or npm:
-
-```
-cd msrtc-bus-timetable
-yarn install
-```
-
-or
-
-```
-cd msrtc-bus-timetable
-npm install
-```
-
-3. Set up a Firebase project and obtain the required Firebase configuration details (API keys, etc.) for your project.
-
-4. Configure the Firebase credentials in the project by creating a firebaseConfig.js file in the project directory.
-   Paste the Firebase configuration details into this file.
-
-5. Run the application on a simulator/emulator or on a physical device using the following command:
-
-```
-yarn start
-```
-
-or
-
-```
-npm start
-```
-
-This will start the development server and provide instructions to launch the application on a device or emulator.
 
 ## Usage
 
